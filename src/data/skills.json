@@ -1,0 +1,32 @@
+[
+  {
+      "category":"front-end",
+      "title": "React",
+      "imageSrc": "skills/react.png"
+  },
+  {
+      "category":"front-end",
+      "title": "Tailwind",
+      "imageSrc": "skills/react.png"
+  },
+  {
+      "category":"back-end",
+      "title": "Node",
+      "imageSrc": "skills/node.png"
+  },
+  {
+      "category":"back-end",
+      "title": "Spring boot",
+      "imageSrc": "skills/graphql.png"
+  },
+  {
+      "category":"back-end",
+      "title": "Postgreql",
+      "imageSrc": "skills/mongodb.png"
+  },
+  {
+      "category":"other",
+      "title": "github",
+      "imageSrc": "skills/figma.png"
+  }
+]
