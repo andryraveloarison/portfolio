@@ -39,12 +39,13 @@
   align-items: flex-start;
   color: var(--color-text);
   z-index: 1;
+  background-color: red;
 }
 
 
 .hello {
   margin-left: -22px;
-  font-size: 2rem;
+  font-size: calc(1rem + 2vw); /* Utilisation de vw pour ajuster la taille du texte en fonction de la largeur de la fenêtre */
   font-weight: 900;
   font-family: var(--font-roboto);
   background: linear-gradient(92.72deg, rgb(40,241,254) 0%, #765eed 100%);
@@ -57,7 +58,7 @@
 
 
 .title {
-  font-size: 4.5rem;
+  font-size: calc(2rem + 2vw); /* Utilisation de vw pour ajuster la taille du texte en fonction de la largeur de la fenêtre */
   font-weight: 900;
   margin-bottom: 1rem;
   font-family: var(--font-roboto);
@@ -123,12 +124,37 @@
   z-index: 0;
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 910px) {
   .container {
+    display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
   }
 
   .content {
     align-items: center;
+    margin-bottom: 5vh;
+  }
+
+  .heroImg {
+    width: 35%;
+    z-index: 0;
+    border-radius: 50%;
+    margin-bottom: 5vh;
+    min-width:300px;
+
+  }
+
+  
+  .hello {
+    font-size: calc(1rem + 1vw); /* Utilisation de vw pour ajuster la taille du texte en fonction de la largeur de la fenêtre */
+  }
+
+  .title {
+    font-size: calc(2rem + 1vw); 
+  }
+
+  .description {
+    font-size: calc(1rem + 1vw); /* Utilisation de vw pour ajuster la taille du texte en fonction de la largeur de la fenêtre */
   }
 }

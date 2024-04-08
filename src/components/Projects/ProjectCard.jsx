@@ -10,7 +10,7 @@ export const ProjectCard = ({
     <div className={styles.container}>
       <div className={styles.header}>
         <p class="text-2xl">🤖</p>
-        <p class="text-2xl">🤖</p>
+        <p class="text-2xl">👀</p>
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
