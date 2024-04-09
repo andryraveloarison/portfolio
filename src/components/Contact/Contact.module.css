@@ -36,9 +36,10 @@
   flex-direction: row;
   align-items: center;
   list-style: none;
-  gap: 26px;
   padding-top: 1.5rem;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .link {
@@ -61,7 +62,7 @@
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: x-small;
   font-weight: 500;
   letter-spacing: 1.5px;
 }

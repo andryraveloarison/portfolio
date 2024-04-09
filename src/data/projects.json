@@ -3,7 +3,7 @@
     "title": "Site Helpdesk",
     "imageSrc": "projects/project.png",
     "description": "Create a ticket and chat with our IT specialists to resolve your issue.",
-    "skills": ["React", "NodeJs","Tailwind","Prisma","Postgresql"],
+    "skills": ["React","Prisma", "NodeJs","Tailwind","Postgresql"],
     "demo": "https://www.example.com",
     "source": "https://www.github.com"
   },
