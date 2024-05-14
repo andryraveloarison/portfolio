@@ -125,9 +125,7 @@
     gap: 34px;
   }
 
-  .container {
-    margin-top: 3%;
-  }
+
   .skills {
     width: 100%;
     flex-direction: column;
