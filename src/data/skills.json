@@ -7,7 +7,7 @@
   {
       "category":"front-end",
       "title": "Tailwind",
-      "imageSrc": "skills/react.png"
+      "imageSrc": "skills/tailwind.png"
   },
   {
       "category":"back-end",
@@ -17,16 +17,16 @@
   {
       "category":"back-end",
       "title": "Spring boot",
-      "imageSrc": "skills/graphql.png"
+      "imageSrc": "skills/spring.png"
   },
   {
       "category":"back-end",
       "title": "Postgreql",
-      "imageSrc": "skills/mongodb.png"
+      "imageSrc": "skills/postgres.png"
   },
   {
       "category":"other",
       "title": "github",
-      "imageSrc": "skills/figma.png"
+      "imageSrc": "skills/githubIcon.png"
   }
 ]

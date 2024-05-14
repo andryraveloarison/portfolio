@@ -27,7 +27,6 @@ export const Contact = () => {
 
       </ul>
 
-      <img src={line} className={styles.line}/>
       <div className={styles.footer}>
         <p>Designed and built by Andry </p>
         <p>©Copyright 2024 - Andry RAVELOARISON</p>

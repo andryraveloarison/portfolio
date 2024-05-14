@@ -13,14 +13,14 @@
   border-width: 1px;
 }
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  
+  align-items: end;
 }
 
 .header p {
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
+  text-align: end;
 }
 .image {
   margin-bottom: 26px;
