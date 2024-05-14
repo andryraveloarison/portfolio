@@ -1,9 +1,7 @@
 import React from "react";
-
 import styles from "./Contact.module.css";
 import { getImageUrl } from "../../utils";
 import contacts from "../../data/contacts.json";
-import line from "/line.gif"
 
 export const Contact = () => {
   return (
