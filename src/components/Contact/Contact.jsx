@@ -17,7 +17,7 @@ export const Contact = () => {
             return(
               <li className={styles.link}>
                 <img src={getImageUrl(contact.imageSrc)} alt="Email icon" className={styles.image}/>
-                <a href={contact.source}>{contact.name}</a>
+                <a href={contact.source} target="_blank">{contact.name}</a>
               </li>
             )
           })

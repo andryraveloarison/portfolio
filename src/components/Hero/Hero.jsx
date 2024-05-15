@@ -20,7 +20,7 @@ export const Hero = () => {
               return(
                 <li className={styles.link}>
                   
-                  <a href={contact.source}>
+                  <a href={contact.source} target="_blank">
                     <img src={getImageUrl(contact.imageSrc)} alt="Email icon" href={contact.source} className={styles.image}/>
                   </a>
                 </li>
