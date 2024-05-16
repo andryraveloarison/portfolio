@@ -14,7 +14,7 @@ export const Skills = () => {
               {skills.map((skill, id) => {
                 if(skill.category == "front-end"){
                   return(
-                    <div className={styles.skillInfo}>
+                    <div key={id} className={styles.skillInfo}>
                       <div className={styles.skillImageContainer}>
                         <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
                       </div>

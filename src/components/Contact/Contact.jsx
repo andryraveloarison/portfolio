@@ -13,9 +13,9 @@ export const Contact = () => {
       <ul className={styles.links}>
 
         {
-          contacts.map((contact) => {
+          contacts.map((contact, id) => {
             return(
-              <li className={styles.link}>
+              <li key={id} className={styles.link}>
                 <img src={getImageUrl(contact.imageSrc)} alt="Email icon" className={styles.image}/>
                 <a href={contact.source} target="_blank">{contact.name}</a>
               </li>
