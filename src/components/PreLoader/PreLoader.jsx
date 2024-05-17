@@ -68,6 +68,7 @@ const PreLoader = () => {
     initialise()
     // Animate elements sequentially
     setTimeout(() => {
+      alert('test')
       animatePass
     }, 2000);
     setTimeout(animateDev, 300); // Delayed by 0.3 seconds
