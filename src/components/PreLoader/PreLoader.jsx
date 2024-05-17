@@ -34,7 +34,7 @@ const PreLoader = () => {
     alert('transform')
     gsap.to(passRef.current, {
       opacity: 1,
-      y: 0,
+      y: 10,
       ease: Power3.easeOut,
       duration: 1,
     });
