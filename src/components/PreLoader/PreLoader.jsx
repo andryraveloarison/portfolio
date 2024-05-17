@@ -28,11 +28,11 @@ const PreLoader = () => {
       ease: Power3.easeIn,
     })
 
-    gsap.from(spanRef2.current, {
+   /* gsap.from(spanRef2.current, {
       opacity: 1,
       y: 40,
       ease: Power3.easeIn,
-    })
+    })*/
 
     gsap.from(spanRef3.current, {
       opacity: 1,
