@@ -55,12 +55,12 @@ const PreLoader = () => {
       duration: 1,
     });
 
-    tl3.to(spanRef3.current, {
+    /*tl3.to(spanRef3.current, {
       opacity: 1,
       y: 0,
       ease: Power3.easeOut,
       duration: 2,
-    });
+    });*/
 
 
     gsap.to(textsContainerRef.current, {
