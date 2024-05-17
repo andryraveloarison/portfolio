@@ -31,7 +31,7 @@ const PreLoader = () => {
   };
 
   const animatePass = () => {  
-
+    alert('transform')
     gsap.to(passRef.current, {
       opacity: 1,
       y: 0,
@@ -69,7 +69,7 @@ const PreLoader = () => {
     // Animate elements sequentially
     setTimeout(() => {
       alert('test')
-      //animatePass
+      animatePass
     }, 2000);
     setTimeout(animateDev, 300); // Delayed by 0.3 seconds
     //setTimeout(animateCreat, 600); // Delayed by 0.6 seconds
