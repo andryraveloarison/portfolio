@@ -6,13 +6,13 @@ const PreLoader = () => {
 
   let preLoaderRef = useRef(null)
   let textsContainerRef = useRef(null)
-  let spanRef1 = useRef(null)
-  let spanRef2 = useRef(null)
-  let spanRef3 = useRef(null)
+  let devRef = useRef(null)
+  let creatRef = useRef(null)
+  let passRef = useRef(null)
 
-  var tl1 = gsap.timeline({delay: 0.3});
-  var tl2 = gsap.timeline({delay: 2});
-  var tl3 = gsap.timeline({delay: 2});
+  var tlDev = gsap.timeline({delay: 0.3});
+  var tlCreate = gsap.timeline({delay: 0.6});
+  var tlPass = gsap.timeline({delay: 0.9});
 
 
   useLayoutEffect(() => {
@@ -22,25 +22,25 @@ const PreLoader = () => {
       duration: 1,
     });
 
-    gsap.from(spanRef1.current, {
-      opacity: 0,
-      y: 20,
+    gsap.from(devRef.current, {
+      opacity: 1,
+      y: 40,
       ease: Power3.easeIn,
     })
 
-    gsap.from(spanRef2.current, {
+    gsap.from(creatRef.current, {
       opacity: 1,
       y: 39,
       ease: Power3.easeIn,
     })
 
-    gsap.from(spanRef3.current, {
+    gsap.from(passRef.current, {
       opacity: 0,
       y: 40,
       ease: Power3.easeIn,
     })
 
-    gsap.to(spanRef1.current, {
+    tlDev.to(devRef.current, {
       opacity: 1,
       y:0,
       ease: Power3.easeOut,
@@ -48,21 +48,20 @@ const PreLoader = () => {
     })
 
 
-    tl2.to(spanRef2.current, {
+    tlCreate.to(creatRef.current, {
       opacity: 1,
       y: 0,
       ease: Power3.easeOut,
-      duration: 2,
+      duration: 1,
     });
 
-    /*tl3.to(spanRef3.current, {
+    tlPass.to(passRef.current, {
       opacity: 1,
       y: 0,
       ease: Power3.easeOut,
-      duration: 2,
+      duration: 1,
     });
 
-*/
 
 
   }, []);
@@ -72,9 +71,9 @@ const PreLoader = () => {
   return (
     <div className={styles.preloader} ref={preLoaderRef}>
       <div className={styles.textsContainer} ref={textsContainerRef}>
-        <span ref={spanRef1}>Developer,</span>
-        <span ref={spanRef2}>Creator,</span>
-        <span ref={spanRef3}>Passionate.</span>
+        <span ref={devRef}>Developer,</span>
+        <span ref={creatRef}>Creator,</span>
+        <span ref={passRef}>Passionate.</span>
       </div>
     </div>
   );
