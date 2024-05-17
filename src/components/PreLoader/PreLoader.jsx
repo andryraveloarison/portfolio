@@ -11,7 +11,7 @@ const PreLoader = () => {
   let spanRef3 = useRef(null)
 
   var tl1 = gsap.timeline({delay: 0.4});
-  var tl2 = gsap.timeline({delay: 0.5});
+  var tl2 = gsap.timeline({delay: 2});
   var tl3 = gsap.timeline({delay: 2});
 
 
@@ -35,7 +35,7 @@ const PreLoader = () => {
     })
 
     gsap.from(spanRef3.current, {
-      opacity: 1,
+      opacity: 0,
       y: 40,
       ease: Power3.easeIn,
     })
@@ -52,7 +52,7 @@ const PreLoader = () => {
       opacity: 1,
       y: 0,
       ease: Power3.easeOut,
-      duration: 1,
+      duration: 2,
     });
 
     /*tl3.to(spanRef3.current, {
