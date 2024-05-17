@@ -1,73 +1,77 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./PreLoader.module.css";
-import { gsap, Power3 } from 'gsap';
-
+import {gsap, Power3} from "gsap";
 const PreLoader = () => {
+  const preLoaderRef = useRef(null);
+  const textsContainerRef = useRef(null);
+  const devRef = useRef(null);
+  const creatRef = useRef(null);
+  const passRef = useRef(null);
 
-  let preLoaderRef = useRef(null)
-  let textsContainerRef = useRef(null)
-  let devRef = useRef(null)
-  let creatRef = useRef(null)
-  let passRef = useRef(null)
+  // Define animation functions
+  const animateDev = () => {
 
-  var tlDev = gsap.timeline({delay: 0.3});
-  var tlCreate = gsap.timeline({delay: 0.6});
-  var tlPass = gsap.timeline({delay: 0.9});
-
-
-  useLayoutEffect(() => {
-    gsap.to(preLoaderRef.current, {
+    gsap.to(devRef.current, {
       opacity: 1,
+      y: 0,
+      ease: Power3.easeOut,
+      duration: 1,
+    });
+  };
+
+  const animateCreat = () => {
+
+ 
+    gsap.to(creatRef.current, {
+      opacity: 1,
+      y: 0,
+      ease: Power3.easeOut,
+      duration: 1,
+    });
+  };
+
+  const animatePass = () => {  
+
+    gsap.to(passRef.current, {
+      opacity: 1,
+      y: 0,
+      ease: Power3.easeOut,
+      duration: 1,
+    });
+  };
+
+  const initialise= () => {
+
+    gsap.from(devRef.current, {
+      opacity: 0,
+      y: 40,
       ease: Power3.easeOut,
       duration: 1,
     });
 
-    gsap.from(devRef.current, {
-      opacity: 1,
-      y: 40,
-      ease: Power3.easeIn,
-    })
-
     gsap.from(creatRef.current, {
-      opacity: 1,
-      y: 39,
-      ease: Power3.easeIn,
-    })
-
+      opacity: 0,
+      y: 40,
+      ease: Power3.easeOut,
+      duration: 1,
+    });
+    
     gsap.from(passRef.current, {
       opacity: 0,
       y: 40,
-      ease: Power3.easeIn,
-    })
-
-    tlDev.to(devRef.current, {
-      opacity: 1,
-      y:0,
-      ease: Power3.easeOut,
-      duration: 1,
-    })
-
-
-    tlCreate.to(creatRef.current, {
-      opacity: 1,
-      y: 0,
       ease: Power3.easeOut,
       duration: 1,
     });
+  }
+  useEffect(() => {
 
-    tlPass.to(passRef.current, {
-      opacity: 1,
-      y: 0,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-
-
-
+    initialise()
+    // Animate elements sequentially
+    setTimeout(animateDev, 300); // Delayed by 0.3 seconds
+    setTimeout(animateCreat, 600); // Delayed by 0.6 seconds
+    setTimeout(animatePass, 900); // Delayed by 0.9 seconds
   }, []);
 
-
-  
   return (
     <div className={styles.preloader} ref={preLoaderRef}>
       <div className={styles.textsContainer} ref={textsContainerRef}>
