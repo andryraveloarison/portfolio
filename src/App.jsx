@@ -5,17 +5,24 @@ import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Projects } from "./components/Projects/Projects";
 import PreLoader from "./components/PreLoader/PreLoader";
-import { useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
+import {gsap, Power3} from "gsap";
 
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const preLoaderRef = useRef(null);
 
   // Let create async method to fetch fake data
   useEffect(() => {
     const fakeDataFetch = () => {
       setTimeout(() => {
-        //setIsLoading(false);
+        gsap.to(preLoaderRef.current, {
+          opacity: 0.9,
+          y: 900,
+          ease: Power3.easeOut,
+          duration: 3,
+        });      
+
       }, 2000);
     };
 
@@ -24,18 +31,15 @@ function App() {
 
   return (
     <div className={styles.App}>
-      {
-        isLoading ? 
-        <PreLoader/> 
-        :
-        <>
+
+          <div className={styles.preloader} ref={preLoaderRef} >
+            <PreLoader />  
+          </div>
           <Navbar />
           <Hero />
           <Skills />
           <Projects />
           <Contact />
-        </>
-    }
 
     </div>
   );

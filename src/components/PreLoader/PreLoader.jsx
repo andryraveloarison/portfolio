@@ -55,7 +55,7 @@ const PreLoader = () => {
 }, []);
 
   return (
-    <div className={styles.preloader} ref={preLoaderRef}>
+    <div className={styles.preLoaderRef} ref={preLoaderRef}>
       <div className={styles.textsContainer} ref={textsContainerRef}>
         <span className={styles.span} ref={devRef}>Developer,</span>
         <span className={styles.span} ref={creatRef}>Creator,</span>

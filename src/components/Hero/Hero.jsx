@@ -13,6 +13,9 @@ export const Hero = () => {
   let linkRef = useRef(null)
 
   useLayoutEffect(() => {
+
+    setTimeout(() => {
+
     gsap.to(helloRef.current, {
       opacity: 1,
       y: -20,
@@ -40,6 +43,7 @@ export const Hero = () => {
       duration: 1,
     });
 
+  }, 2300)
 
 
   }, []);
