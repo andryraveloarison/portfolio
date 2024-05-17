@@ -41,7 +41,7 @@ const PreLoader = () => {
     })
 */
 
-    tl1.to(spanRef1.current, {
+    gsap.to(spanRef1.current, {
       opacity: 1,
       y:0,
       ease: Power3.easeOut,
