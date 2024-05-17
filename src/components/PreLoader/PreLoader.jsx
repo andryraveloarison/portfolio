@@ -12,7 +12,7 @@ const PreLoader = () => {
 
   var tl1 = gsap.timeline({delay: 0.4});
   var tl2 = gsap.timeline({delay: 0.5});
-  var tl3 = gsap.timeline({delay: 1});
+  var tl3 = gsap.timeline({delay: 2});
 
 
   useLayoutEffect(() => {
@@ -61,6 +61,8 @@ const PreLoader = () => {
       ease: Power3.easeOut,
       duration: 1,
     });
+
+
     gsap.to(textsContainerRef.current, {
       opacity: 1,
       ease: Power3.easeOut,
