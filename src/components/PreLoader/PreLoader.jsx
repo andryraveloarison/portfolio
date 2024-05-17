@@ -60,15 +60,9 @@ const PreLoader = () => {
       y: 0,
       ease: Power3.easeOut,
       duration: 2,
-    });*/
-
-
-    gsap.to(textsContainerRef.current, {
-      opacity: 1,
-      ease: Power3.easeOut,
-      duration: 1,
     });
 
+*/
 
 
   }, []);
