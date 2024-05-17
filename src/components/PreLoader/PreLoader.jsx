@@ -28,7 +28,7 @@ const PreLoader = () => {
       ease: Power3.easeIn,
     })
 
-    gsap.from(spanRef2.current, {
+    /*gsap.from(spanRef2.current, {
       opacity: 1,
       y: 40,
       ease: Power3.easeIn,
@@ -39,7 +39,7 @@ const PreLoader = () => {
       y: 40,
       ease: Power3.easeIn,
     })
-
+*/
 
     tl1.to(spanRef1.current, {
       opacity: 1,
@@ -48,7 +48,7 @@ const PreLoader = () => {
       duration: 1,
     })
 
-
+/*
 
     tl2.to(spanRef2.current, {
       opacity: 1,
@@ -63,7 +63,7 @@ const PreLoader = () => {
       ease: Power3.easeOut,
       duration: 1,
     });
-
+*/
     gsap.to(textsContainerRef.current, {
       opacity: 1,
       ease: Power3.easeOut,

@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fakeDataFetch = () => {
       setTimeout(() => {
-        setIsLoading(false);
+        //setIsLoading(false);
       }, 2000);
     };
 
