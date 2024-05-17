@@ -10,7 +10,7 @@ const PreLoader = () => {
   let spanRef2 = useRef(null)
   let spanRef3 = useRef(null)
 
-  var tl1 = gsap.timeline({delay: 0.4});
+  var tl1 = gsap.timeline({delay: 0.3});
   var tl2 = gsap.timeline({delay: 2});
   var tl3 = gsap.timeline({delay: 2});
 
