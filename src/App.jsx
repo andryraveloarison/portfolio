@@ -21,6 +21,7 @@ function App() {
           y: 900,
           ease: Power3.easeOut,
           duration: 3,
+          zIndex:-1
         });      
 
       }, 2000);

@@ -43,7 +43,7 @@ export const Hero = () => {
       duration: 1,
     });
 
-  }, 2300)
+  }, 2400)
 
 
   }, []);
