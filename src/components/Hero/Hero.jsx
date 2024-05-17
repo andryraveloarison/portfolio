@@ -4,6 +4,7 @@ import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 import contacts from "../../data/contacts.json";
 import { gsap, Power3 } from 'gsap';
+import { animateHero } from "../../animations";
 
 export const Hero = () => {
 
@@ -14,37 +15,7 @@ export const Hero = () => {
 
   useLayoutEffect(() => {
 
-    setTimeout(() => {
-
-    gsap.to(helloRef.current, {
-      opacity: 1,
-      y: -20,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-    gsap.to(titleRef.current, {
-      opacity: 1,
-      y: -30,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-
-    gsap.to(descriptionRef.current, {
-      opacity: 1,
-      y: -40,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-
-    gsap.to(linkRef.current, {
-      opacity: 1,
-      y: -50,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-
-  }, 2400)
-
+    animateHero(helloRef,titleRef,descriptionRef,linkRef)
 
   }, []);
 

@@ -14,9 +14,18 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: "Michroma", sans-serif;
   height: 100vh;
+  scrollbar-width: none; /* Pour Firefox */
+
+}
+
+.body::-webkit-scrollbar { /* Pour WebKit (Chrome, Safari, etc.) */
+  width: 0;
+  height: 0;
 }
 
 .container {
