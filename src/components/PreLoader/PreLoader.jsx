@@ -13,7 +13,7 @@ const PreLoader = () => {
 
     gsap.to(devRef.current, {
       opacity: 1,
-      y: 0,
+      y: -40,
       ease: Power3.easeOut,
       duration: 1,
     });
@@ -24,65 +24,44 @@ const PreLoader = () => {
  
     gsap.to(creatRef.current, {
       opacity: 1,
-      y: 0,
+      y: -40,
       ease: Power3.easeOut,
       duration: 1,
     });
   };
 
   const animatePass = () => {  
-    alert('transform')
     gsap.to(passRef.current, {
       opacity: 1,
-      y: -10,
+      y: -40,
       ease: Power3.easeOut,
       duration: 1,
     });
   };
 
-  const initialise= () => {
-
-    gsap.from(devRef.current, {
-      opacity: 0,
-      y: 40,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-
-    gsap.from(creatRef.current, {
-      opacity: 0,
-      y: 40,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-    
-    gsap.from(passRef.current, {
-      opacity: 0,
-      y: 40,
-      ease: Power3.easeOut,
-      duration: 1,
-    });
-  }
   useEffect(() => {
-
-    // Animate elements sequentially
     setTimeout(() => {
-      alert('test')
+      animateDev()
+    }, 300);
+
+    setTimeout(() => {
+      animateCreat()
+    }, 600);
+
+    setTimeout(() => {
       animatePass()
-    }, 2000);
-    //setTimeout(animateDev, 300); // Delayed by 0.3 seconds
-    //setTimeout(animateCreat, 600); // Delayed by 0.6 seconds
-    //setTimeout(animatePass, 900); // Delayed by 0.9 seconds
-  }, []);
+    }, 900);
+    
+}, []);
 
   return (
     <div className={styles.preloader} ref={preLoaderRef}>
       <div className={styles.textsContainer} ref={textsContainerRef}>
-        <span ref={devRef}>Developer,</span>
-        <span ref={creatRef}>Creator,</span>
-        <span ref={passRef}>Passionate.</span>
+        <span className={styles.span} ref={devRef}>Developer,</span>
+        <span className={styles.span} ref={creatRef}>Creator,</span>
+        <span className={styles.span} ref={passRef}>Passionate.</span>
       </div>
-    </div>
+    </div> 
   );
 };
 
