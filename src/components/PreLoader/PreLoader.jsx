@@ -71,7 +71,7 @@ const PreLoader = () => {
       alert('test')
       animatePass
     }, 2000);
-    setTimeout(animateDev, 300); // Delayed by 0.3 seconds
+    //setTimeout(animateDev, 300); // Delayed by 0.3 seconds
     //setTimeout(animateCreat, 600); // Delayed by 0.6 seconds
     //setTimeout(animatePass, 900); // Delayed by 0.9 seconds
   }, []);
