@@ -59,7 +59,7 @@ const PreLoader = () => {
       opacity: 1,
       y: 0,
       ease: Power3.easeOut,
-      duration: 1,
+      duration: 2,
     });
 
 
