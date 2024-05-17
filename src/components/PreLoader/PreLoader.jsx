@@ -15,7 +15,7 @@ const PreLoader = () => {
   var tl3 = gsap.timeline({delay: 1});
 
 
-  /*useLayoutEffect(() => {
+  useLayoutEffect(() => {
     gsap.to(preLoaderRef.current, {
       opacity: 1,
       ease: Power3.easeOut,
@@ -72,7 +72,7 @@ const PreLoader = () => {
 
 
 
-  }, []);*/
+  }, []);
 
 
   
