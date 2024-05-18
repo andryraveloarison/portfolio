@@ -1,16 +1,17 @@
-@import "../../vars.css";
+@import "../../../vars.css";
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 10px;
-  background: linear-gradient(180deg, #08123a 0%, #011333 100%);
   box-shadow: 0 16px 14px 0 #04152d;
   padding: 18px 24px;
-  max-width: 426px;
+  width: 80vw;
   border-style: solid;
   border-color: rgb(50, 61, 70);
   border-width: 1px;
+  justify-content: space-between;
+  cursor: pointer;
 }
 .header {
   align-items: end;
