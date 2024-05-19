@@ -54,7 +54,6 @@ export const ProjectCard = ({
         start: "-30px 60%",
         end:"500px",
         scrub:true,
-        markers: true,
         toggleActions: "restart pause reverse none",
         opacity:1,
         duration: 5
