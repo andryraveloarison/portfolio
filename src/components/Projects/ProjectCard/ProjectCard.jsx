@@ -54,10 +54,11 @@ export const ProjectCard = ({
         start: "top 80%",
         scrub:true,
         toggleActions: "restart pause reverse none",
-        opacity:1
+        opacity:1,
+        duration: 2
       },
       opacity: 1,
-      duration: 2
+      duration: 4
     })
   })
 
