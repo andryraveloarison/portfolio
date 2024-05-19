@@ -5,10 +5,14 @@ import { useRef } from "react";
 import {gsap, Power3} from "gsap";
 
 export const ProjectCard = ({
-  project: { title, description, skills, imageSrc},
+  project: { title, date, skills, imageSrc, index},
 }) => {
 
   let imageRef = useRef(null)
+  let projectTitleRef = useRef (null)
+  let indexRef = useRef(null)
+  let dateRef = useRef(null)
+
 
   useEffect(() => {
     gsap.from(imageRef.current, {
@@ -16,23 +20,86 @@ export const ProjectCard = ({
       ease: Power3.easeOut,
       duration: 0.3,
     
-    });      
+    });    
+    
+    gsap.from(projectTitleRef.current, {
+      ease: Power3.easeOut,
+      duration: 0.3,
+      marginLeft: 10
+    });  
+
+    gsap.from(dateRef.current, {
+      ease: Power3.easeOut,
+      duration: 0.3,
+    
+    });  
+    
+    gsap.from(indexRef.current, {
+      opacity:1,
+      ease: Power3.easeOut,
+      duration: 0.3,
+    
+    }); 
   })
 
   const onMouseEnterHandler = ()=> {
+
+    gsap.to(projectTitleRef.current, {
+      ease: Power3.easeOut,
+      duration: 1,
+      marginLeft : -50
+    });  
+
     gsap.to(imageRef.current, {
       opacity: 1,
       ease: Power3.easeOut,
       duration: 1,
+      scale: 1.1,
     }); 
+
+    gsap.to(indexRef.current, {
+      opacity:0,
+      ease: Power3.easeOut,
+      duration: 0.4,
+    
+    }); 
+
+    gsap.to(dateRef.current, {
+      ease: Power3.easeOut,
+      duration: 1,
+      marginRight: -20
+    });  
+
   }
 
   const onMouseLeaveHandler = ()=> {
+
+    gsap.to(projectTitleRef.current, {
+      ease: Power3.easeOut,
+      duration: 1,
+      marginLeft : 10
+    });  
+
     gsap.to(imageRef.current, {
       opacity: 0,
       ease: Power3.easeOut,
       duration: 1,
+      scale: 1,
     }); 
+
+    gsap.to(indexRef.current, {
+      opacity:1,
+      ease: Power3.easeOut,
+      duration: 0.4,
+    
+    }); 
+
+    gsap.to(dateRef.current, {
+      ease: Power3.easeOut,
+      duration: 1,
+      marginRight: 0
+    });  
+
   }
 
   return (
@@ -40,9 +107,12 @@ export const ProjectCard = ({
     onMouseEnter={onMouseEnterHandler}
     onMouseLeave={onMouseLeaveHandler}> {/* Corrected here */}
 
-      <div>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
+      <div className={styles.date} ref={indexRef}>
+        <h4 style={{fontSize: 26}}>{index}</h4>
+      </div>
+      <div className={styles.projectTitle} ref={projectTitleRef}>
+        <div>
+            <h3 className={styles.title}>{title}</h3>
           <ul className={styles.skills}>
             {skills.map((skill, id) => {
               return (
@@ -52,6 +122,10 @@ export const ProjectCard = ({
               );
             })}
           </ul>
+
+
+          </div>
+
       </div>
       <div ref={imageRef} style={{opacity:0}}>
   
@@ -60,6 +134,11 @@ export const ProjectCard = ({
           alt="Hero image of me"
         />
       </div>
+
+      <div className={styles.date} ref={dateRef}>
+        <h4 >{date}</h4>
+      </div>
+
     </div>
   );
 };

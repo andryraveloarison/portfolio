@@ -1,18 +1,22 @@
 [
   {
+    "index": "01",
     "title": "Site Helpdesk",
     "imageSrc": "projects/project.png",
     "description": "Create a ticket and chat with our IT specialists to resolve your issue.",
     "skills": ["React","Prisma", "NodeJs","Tailwind","Postgresql"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://www.github.com",
+    "date": "2023"
   },
   {
+    "index": "02",
     "title": "Dominoes",
     "imageSrc": "projects/project.png",
     "description": "Play dominoes with your friends even when you don't have dominoes or are far apart.",
     "skills": ["React", "Spring boot"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://www.github.com",
+    "date": "2024"
   }
 ]

@@ -10,7 +10,7 @@
   border-style: solid;
   border-color: rgb(50, 61, 70);
   border-width: 1px;
-  justify-content: space-between;
+  justify-content: space-around;
   cursor: pointer;
 }
 .header {
@@ -74,4 +74,25 @@
   border-radius: 100px;
   background: var(--color-primary);
   padding: 1px 22px;
+}
+
+
+.projectTitle {
+  align-items: center;
+  display: flex;
+  width: 35vw;
+}
+
+.date {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.index {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 20px;
 }
