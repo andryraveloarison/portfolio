@@ -51,7 +51,7 @@ export const ProjectCard = ({
     gsap.to(skillRef.current,{
       scrollTrigger:{
         trigger: skillRef.current,
-        start: "-50px 60%",
+        start: "-30px 60%",
         end:"500px",
         scrub:true,
         markers: true,
