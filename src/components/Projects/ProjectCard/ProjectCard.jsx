@@ -4,6 +4,10 @@ import { getImageUrl } from "../../../utils";
 import { useRef } from "react";
 import {gsap, Power3} from "gsap";
 
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+
 export const ProjectCard = ({
   project: { title, date, skills, imageSrc, index},
 }) => {
@@ -12,9 +16,12 @@ export const ProjectCard = ({
   let projectTitleRef = useRef (null)
   let indexRef = useRef(null)
   let dateRef = useRef(null)
+  let skillRef = useRef(null)
+
 
 
   useEffect(() => {
+
     gsap.from(imageRef.current, {
       opacity: 0,
       ease: Power3.easeOut,
@@ -40,6 +47,19 @@ export const ProjectCard = ({
       duration: 0.3,
     
     }); 
+
+    gsap.to(skillRef.current,{
+      scrollTrigger:{
+        trigger: skillRef.current,
+        start: "top 80%",
+        markers: true,
+        scrub:true,
+        toggleActions: "restart pause reverse none",
+        opacity:1
+      },
+      opacity: 1,
+      duration: 2
+    })
   })
 
   const onMouseEnterHandler = ()=> {
@@ -55,6 +75,7 @@ export const ProjectCard = ({
       ease: Power3.easeOut,
       duration: 1,
       scale: 1.1,
+      marginLeft: -40
     }); 
 
     gsap.to(indexRef.current, {
@@ -113,7 +134,7 @@ export const ProjectCard = ({
       <div className={styles.projectTitle} ref={projectTitleRef}>
         <div>
             <h3 className={styles.title}>{title}</h3>
-          <ul className={styles.skills}>
+          <ul className={styles.skills} ref={skillRef}>
             {skills.map((skill, id) => {
               return (
                 <li key={id} className={styles.skill}>

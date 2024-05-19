@@ -39,8 +39,8 @@ function App() {
           </div>
           <Navbar />
           <Hero />
-          <Skills />
           <Projects />
+          <Skills />
           <Contact />
 
     </div>

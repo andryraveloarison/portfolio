@@ -47,7 +47,8 @@
   flex-wrap: wrap;
   gap: 6px;
   list-style: none;
-}
+  opacity: 0;
+  }
 
 .skill {
   font-size: 0.9rem;
