@@ -53,7 +53,6 @@ export const ProjectCard = ({
         trigger: skillRef.current,
         start: "-30px center",
         end:"500px",
-        markers: true,
         scrub:true,
         toggleActions: "restart pause reverse none",
         opacity:1,
