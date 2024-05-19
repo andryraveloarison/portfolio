@@ -52,7 +52,7 @@ export const ProjectCard = ({
       scrollTrigger:{
         trigger: skillRef.current,
         start: "top 80%",
-        end:"+=300px",
+        end:"100px",
         markers: true,
         scrub:true,
         toggleActions: "restart pause reverse none",
