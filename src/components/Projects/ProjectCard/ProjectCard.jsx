@@ -55,7 +55,7 @@ export const ProjectCard = ({
         scrub:true,
         toggleActions: "restart pause reverse none",
         opacity:1,
-        duration: 2
+        duration: 3
       },
       opacity: 1,
       duration: 4
