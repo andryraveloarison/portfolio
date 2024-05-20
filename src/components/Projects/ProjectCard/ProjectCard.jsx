@@ -30,7 +30,7 @@ export const ProjectCard = ({
       opacity: 0,
       ease: Power3.easeOut,
       duration: 0.3,
-      marginTop:-50
+      marginTop:-100
     });    
     
     gsap.from(projectTitleRef.current, {
