@@ -3,7 +3,6 @@ import React, { useLayoutEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 import contacts from "../../data/contacts.json";
-import { gsap, Power3 } from 'gsap';
 import { animateHero } from "../../animations";
 
 export const Hero = () => {

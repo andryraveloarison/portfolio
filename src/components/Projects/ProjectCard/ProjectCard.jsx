@@ -4,6 +4,7 @@ import { getImageUrl } from "../../../utils";
 import { useRef } from "react";
 import {gsap, Power3} from "gsap";
 
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,15 +19,18 @@ export const ProjectCard = ({
   let dateRef = useRef(null)
   let skillRef = useRef(null)
 
+  const windowWidth = window.innerWidth;
 
 
   useEffect(() => {
 
+    if (windowWidth >= 910){
+    
     gsap.from(imageRef.current, {
       opacity: 0,
       ease: Power3.easeOut,
       duration: 0.3,
-    
+      marginTop:-30
     });    
     
     gsap.from(projectTitleRef.current, {
@@ -48,23 +52,54 @@ export const ProjectCard = ({
     
     }); 
 
+
+
+  }else {
+
+    gsap.to(imageRef.current, {
+      opacity: 1,
+      ease: Power3.easeOut,
+      duration: 1,
+      marginTop:-78,
+      scale:0.8
+    }); 
+
+    gsap.to(indexRef.current, {
+      opacity:0,
+      ease: Power3.easeOut,
+      duration: 0.3,
+    }); 
+
+    gsap.to(dateRef.current, {
+      opacity:0,
+      ease: Power3.easeOut,
+      duration: 0.3,
+    }); 
+
+
+  }
+
     gsap.to(skillRef.current,{
       scrollTrigger:{
         trigger: skillRef.current,
-        start: "-30px 60%",
+        start: "-30px 90%",
         end:"500px",
+        markers: true,
         scrub:true,
-        toggleActions: "restart pause reverse none",
+        toggleActions: "restart pause reverse pause",
         opacity:1,
         duration: 5
       },
       opacity: 1,
-      duration: 4
+      duration: 5
     })
+  
+
   })
 
   const onMouseEnterHandler = ()=> {
-
+    if (windowWidth >= 910){
+      
     gsap.to(projectTitleRef.current, {
       ease: Power3.easeOut,
       duration: 1,
@@ -91,10 +126,11 @@ export const ProjectCard = ({
       duration: 1,
       marginRight: -20
     });  
-
+  }
   }
 
   const onMouseLeaveHandler = ()=> {
+    if (windowWidth >= 910){
 
     gsap.to(projectTitleRef.current, {
       ease: Power3.easeOut,
@@ -121,7 +157,7 @@ export const ProjectCard = ({
       duration: 1,
       marginRight: 0
     });  
-
+  }
   }
 
   return (
