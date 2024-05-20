@@ -30,7 +30,7 @@ export const ProjectCard = ({
       opacity: 0,
       ease: Power3.easeOut,
       duration: 0.3,
-      marginTop:-100
+      marginTop:-30
     });    
     
     gsap.from(projectTitleRef.current, {
@@ -110,7 +110,8 @@ export const ProjectCard = ({
       ease: Power3.easeOut,
       duration: 1,
       scale: 1.1,
-      marginLeft: -40
+      marginLeft: -40,
+      marginTop: -30
     }); 
 
     gsap.to(indexRef.current, {
