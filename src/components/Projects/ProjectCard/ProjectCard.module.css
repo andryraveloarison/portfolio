@@ -99,7 +99,11 @@
   width: 20px;
 }
 
-
+@media screen and (max-width: 970px) {
+  .projectTitle {
+    width: 20vw;
+  }
+}
 @media screen and (max-width: 910px) {
   .container {
     display: flex;
