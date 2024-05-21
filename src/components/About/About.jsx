@@ -9,10 +9,27 @@ export const About = () => {
 
   const constraintsRef = useRef(null);
 
+  const handleMouseDown = () => {
+    document.body.style.cursor = 'grabbing';
+  };
+
+  // Fonction pour restaurer le curseur normal
+  const handleMouseUp = () => {
+    document.body.style.cursor = '';
+  };
 
   return (
     <section className={styles.container} id="about">
-      
+      <motion.div className={styles.containerMotion} ref={constraintsRef}>
+          <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef} 
+          >               
+              <img src={getImageUrl("about/aboutImage.png")}
+                  alt="Me sitting with a laptop"
+                  className={styles.aboutImage}
+                  style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
+                />
+          </motion.div>
+      </motion.div>
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
     
