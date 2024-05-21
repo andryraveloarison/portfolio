@@ -1,17 +1,21 @@
 import React from "react";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+
 
 export const About = () => {
+
+  const constraintsRef = useRef(null);
+
+
   return (
     <section className={styles.container} id="about">
+      
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
-        <img
-          src={getImageUrl("about/aboutImage.png")}
-          alt="Me sitting with a laptop"
-          className={styles.aboutImage}
-        />
+    
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />

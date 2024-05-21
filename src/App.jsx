@@ -4,11 +4,10 @@ import { Skills } from "./components/Skills/Skills";
 import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Projects } from "./components/Projects/ProjectInfo/ProjectInfo";
-import { ProjectDetails } from "./components/Projects/ProjectDetails/ProjectDetails";
 import PreLoader from "./components/PreLoader/PreLoader";
 import { useRef, useEffect } from "react";
 import {gsap, Power3} from "gsap";
-
+import {About} from "./components/About/About.jsx"
 
 function App() {
   const preLoaderRef = useRef(null);
@@ -40,6 +39,7 @@ function App() {
           <Navbar />
           <Hero />
           <Projects />
+          <About />
           <Skills />
           <Contact />
 

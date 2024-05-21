@@ -2,9 +2,7 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
   border-radius: 15px;
-  padding: 73px;
   margin-top: 129px;
   z-index: 1;
   margin-left: 10%;
@@ -17,16 +15,16 @@
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: row-reverse;
 }
 
 .aboutImage {
-  width: 35%;
+  width: 100%;
 }
 
 .aboutItems {
@@ -65,6 +63,31 @@
 .aboutItem p {
   font-size: 25px;
 }
+
+
+.containerMotion {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+}
+
+.itemMotion {
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: inherit;
+  cursor: grabbing;
+}
+
+.itemMotion:hover {
+  cursor: grab;
+}
+
 
 @media screen and (max-width: 830px) {
   .container {
