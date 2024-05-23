@@ -20,7 +20,10 @@ export const About = () => {
 
   return (
     <section className={styles.container} id="about">
+      
+      <h2 className={styles.title}>About</h2>
       <motion.div className={styles.containerMotion} ref={constraintsRef}>
+      <div className={styles.content}>
           <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef} 
           >               
               <img src={getImageUrl("about/aboutImage.png")}
@@ -29,10 +32,8 @@ export const About = () => {
                   style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
                 />
           </motion.div>
-      </motion.div>
-      <h2 className={styles.title}>About</h2>
-      <div className={styles.content}>
-    
+        <div>
+
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
@@ -65,7 +66,11 @@ export const About = () => {
             </div>
           </li>
         </ul>
+        </div>
+
       </div>
+      </motion.div>
+
     </section>
   );
 };
