@@ -7,28 +7,23 @@ import { useScroll, motion, useTransform } from "framer-motion";
 
 
 export const Projects = () => {
-  const title = "All porject real"
+  const title = "All my porject "
   const titleRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,
-    offset:['start end','start start']
+    offset:['start end','start 0.25']
   })
 
   const words = title.split(" ")
-  useEffect(()=>{
-
-    scrollYProgress.on('change',e => console.log(e))
-
-  },[])
   
   return (
     <section className={styles.container} id="projects">
       <h2 className={styles.title} ref={titleRef}>
         {
           words.map((word,i)=>{
-            const start = i/words.length
+            const start = i / words.length
             const end = i + (1/words.length)
-            return <Word key={i} range={[start, end]} progress ={scrollYProgress}>{word}</Word>
+            return <Word key={i} range={[start, 1]} progress ={scrollYProgress}>{word}</Word>
           })
         }
         </h2>
