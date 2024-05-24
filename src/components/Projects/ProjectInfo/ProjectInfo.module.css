@@ -25,6 +25,15 @@
 }
 
 
+.word{
+  margin-left: 10px;
+  position: relative;
+}
+
+.shadow{
+  position: absolute;
+  opacity: 0.1;
+}
 @media screen and (max-width: 910px) {
 
   .title {
