@@ -1,13 +1,8 @@
 import styles from "./App.module.css";
-import { Contact } from "./components/Contact/Contact";
-import { Skills } from "./components/Skills/Skills";
-import { Hero } from "./components/Hero/Hero";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Projects } from "./components/Projects/ProjectInfo/ProjectInfo";
-import PreLoader from "./components/PreLoader/PreLoader";
+import PreLoader from "./pages/PreLoader/PreLoader.jsx"
 import { useRef, useEffect } from "react";
 import {gsap, Power3} from "gsap";
-import {About} from "./components/About/About.jsx"
+import Home from "./pages/Home/Home.jsx"
 
 function App() {
   const preLoaderRef = useRef(null);
@@ -36,13 +31,7 @@ function App() {
           <div className={styles.preloader} ref={preLoaderRef} >
             <PreLoader />  
           </div>
-          <Navbar />
-          <Hero />
-          <Projects />
-          <About />
-          <Skills />
-          <Contact />
-
+          <Home/>
     </div>
   );
 }

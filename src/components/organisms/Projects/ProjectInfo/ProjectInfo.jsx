@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "./ProjectInfo.module.css";
-import projects from "../../../data/projects.json";
-import { ProjectCard } from "../ProjectCard/ProjectCard";
+import projects from "../../../../data/projects.json";
+import { ProjectCard } from "../ProjectCard/ProjectCard.jsx";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
-
+import Word from "../../../atoms/Word/Word.jsx";
 
 export const Projects = () => {
   const title = "All my porject "
@@ -38,15 +38,3 @@ export const Projects = () => {
 
 
 
-const Word = ({children, range, progress})=>{
-  const opacity = useTransform(progress, range, [0,1])
-  return (
-      <span className={styles.word} >
-        <span className={styles.shadow}> {children}</span>
-        <motion.span style={{opacity}}>
-          {children}
-        </motion.span>
-      </span>
-
-  )
-}

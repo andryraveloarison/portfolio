@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Contact.module.css";
-import { getImageUrl } from "../../utils";
-import contacts from "../../data/contacts.json";
+import { getImageUrl } from "../../../utils";
+import contacts from "../../../data/contacts.json";
 
 export const Contact = () => {
   return (

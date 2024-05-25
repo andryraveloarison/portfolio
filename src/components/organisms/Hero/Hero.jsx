@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useRef } from "react";
 
 import styles from "./Hero.module.css";
-import { getImageUrl } from "../../utils";
-import contacts from "../../data/contacts.json";
-import { animateHero } from "../../animations";
+import { getImageUrl } from "../../../utils";
+import contacts from "../../../data/contacts.json";
+import { animateHero } from "../../../animations";
 
 export const Hero = () => {
 

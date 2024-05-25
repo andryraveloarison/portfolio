@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ProjectCard.module.css";
-import { getImageUrl } from "../../../utils";
+import { getImageUrl } from "../../../../utils";
 import { useRef } from "react";
 import {gsap, Power3} from "gsap";
 

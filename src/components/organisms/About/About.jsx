@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./About.module.css";
-import { getImageUrl } from "../../utils";
+import { getImageUrl } from "../../../utils";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
