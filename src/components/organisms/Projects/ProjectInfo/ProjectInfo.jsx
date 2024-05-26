@@ -3,7 +3,7 @@ import styles from "./ProjectInfo.module.css";
 import projects from "../../../../data/projects.json";
 import { ProjectCard } from "../ProjectCard/ProjectCard.jsx";
 import { useRef } from "react";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 import Word from "../../../atoms/Word/Word.jsx";
 
 export const Projects = () => {
@@ -22,7 +22,6 @@ export const Projects = () => {
         {
           words.map((word,i)=>{
             const start = i / words.length
-            const end = i + (1/words.length)
             return <Word key={i} range={[start, 1]} progress ={scrollYProgress}>{word}</Word>
           })
         }
