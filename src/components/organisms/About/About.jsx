@@ -55,8 +55,8 @@ export const About = () => {
         <div className={styles.aboutItems}>
           <div className={styles.aboutItem}>
             <div className={styles.aboutItemText}>
-              <h1 style={{fontSize: "3vw"}}>Web Developer</h1>
-              <p style={{fontSize: "1.5vw"}}>
+              <h1 >Web Developer</h1>
+              <p>
                 I'm a frontend developer with experience in building responsive
                 and optimized sites
               </p>

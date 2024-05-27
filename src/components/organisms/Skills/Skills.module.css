@@ -120,6 +120,9 @@
 
 @media screen and (max-width: 967px) {
 
+  .title {
+    font-size: 30px;
+  }
   .container {
     margin-top: 20vh;
   }

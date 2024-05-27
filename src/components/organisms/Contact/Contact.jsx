@@ -30,7 +30,7 @@ export const Contact = () => {
             })
           }
         </h2>
-        <p>Feel free to contact me by email or through my social networks.</p>
+        <p className={styles.contactText}>Feel free to contact me by email or through my social networks.</p>
       </div>
       <ul className={styles.links}>
 

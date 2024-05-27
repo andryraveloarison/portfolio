@@ -64,8 +64,14 @@
   font-weight: 600;
 }
 
+
+.aboutItem h1 {
+  font-size: 2.5vw;    
+  text-align: center;  
+}
+
 .aboutItem p {
-  font-size: 15px;
+  font-size: 1.5vw
 }
 
 
@@ -91,8 +97,13 @@
 }
 
 
+
+
 @media screen and (max-width: 830px) {
 
+  .title {
+    font-size: 30px;
+  }
   .aboutItems {
     width: 80vw;
   }
@@ -106,12 +117,23 @@
 
   .content {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutItem p {
+    font-size: 15px
   }
 
 
+  .aboutItem h1 {
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+  }
 
   .aboutItems {
     margin-top: 29px;
+    text-align: center;
   }
 
   .aboutItem {
