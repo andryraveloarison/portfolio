@@ -2,11 +2,31 @@ import React from "react";
 import styles from "./Skills.module.css";
 import skills from "../../../data/skills.json";
 import { getImageUrl } from "../../../utils";
+import { useRef } from "react";
+import Word from "../../atoms/Word/Word.jsx";
+import { useScroll } from "framer-motion";
 
 export const Skills = () => {
+
+  const title = "My skills "
+  const titleRef = useRef(null)
+  const {scrollYProgress} = useScroll({
+    target: titleRef,
+    offset:['start end','start 0.25']
+  })
+
+  const words = title.split(" ")
+
   return (
     <section className={styles.container} id="skills">
-      <h2 className={styles.title}>Skills</h2>
+      <h2 className={styles.title} ref={titleRef}> 
+        {
+          words.map((word,i)=>{
+            const start = i / words.length
+            return <Word key={i} range={[start, 1]} progress ={scrollYProgress}>{word}</Word>
+          })
+        }
+      </h2>      
       <div className={styles.content}>
         <div className={styles.skills}>
           <div  className={styles.skill}>
