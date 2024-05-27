@@ -9,7 +9,7 @@ import { useScroll } from "framer-motion";
 
 export const Contact = () => {
 
-  const title = "About me "
+  const title = "CONTACT ME "
   const titleRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,

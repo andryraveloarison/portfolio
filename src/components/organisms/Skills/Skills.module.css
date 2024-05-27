@@ -1,7 +1,7 @@
 @import "../../../vars.css";
 
 .container {
-  margin-top: 76px;
+  margin-top: 30vh;
   color: var(--color-text);
   margin-left: 10%;
   margin-right: 10%;
@@ -119,6 +119,11 @@
 }
 
 @media screen and (max-width: 967px) {
+
+  .container {
+    margin-top: 20vh;
+  }
+
   .content {
     flex-direction: column;
     align-items: center;

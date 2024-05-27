@@ -7,7 +7,7 @@ import { useScroll } from "framer-motion";
 import Word from "../../../atoms/Word/Word.jsx";
 
 export const Projects = () => {
-  const title = "All my porject "
+  const title = "ALL MY PROJECTS "
   const titleRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,

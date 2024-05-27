@@ -8,7 +8,7 @@ import { useScroll } from "framer-motion";
 
 export const Skills = () => {
 
-  const title = "My skills "
+  const title = "MY SKYLLS "
   const titleRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,
