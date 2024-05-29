@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 .container {
-  margin-top: 30vh;
+  margin-top: 20vh;
   color: var(--color-text);
   width: 100vw;
   padding: 58px 10%;
