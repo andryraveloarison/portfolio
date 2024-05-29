@@ -50,15 +50,16 @@ export const About = () => {
                   style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
                 />
           </motion.div>
-        <div>
+      <div>
 
         <div className={styles.aboutItems}>
           <div className={styles.aboutItem}>
             <div className={styles.aboutItemText}>
               <h1 >Web Developer</h1>
               <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                  Having a first successful experience in the
+                  web development, I am currently open to all
+                  new opportunities in this area.
               </p>
             </div>
           </div>

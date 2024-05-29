@@ -56,6 +56,7 @@
   border-bottom: white;
   border-bottom-style: solid;
   border-width: 0.01px;
+  padding-bottom: 10px;
 }
 
 .skillImageContainer {
@@ -144,6 +145,7 @@
   border-width: 0.5px;
   padding: 10px;
   margin-left: -20vw;
+  min-width: 200px;
 }
 
 .itemMotionBack {
@@ -154,6 +156,7 @@
   border-width: 0.5px;
   padding: 10px;
   margin-left: 20vw;
+  min-width: 200px;
 }
 
 
@@ -191,9 +194,11 @@
 
   .itemMotionBack {
     margin-left: 0;
+    min-width: 150px;
   }
 
   .itemMotion {
     margin-left: 0;
+    min-width: 150px;
   }
 }
