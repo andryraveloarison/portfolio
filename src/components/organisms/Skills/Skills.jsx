@@ -5,8 +5,11 @@ import { getImageUrl } from "../../../utils";
 import { useRef } from "react";
 import Word from "../../atoms/Word/Word.jsx";
 import { useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Skills = () => {
+
+  const constraintsRef = useRef(null);
 
   const title = "MY SKYLLS "
   const titleRef = useRef(null)
@@ -27,56 +30,66 @@ export const Skills = () => {
           })
         }
       </h2>      
+
       <div className={styles.content}>
-        <div className={styles.skills}>
-          <div  className={styles.skill}>
-            <h1 className={styles.skillTitle}>Front-end</h1>
-              {skills.map((skill, id) => {
-                if(skill.category == "front-end"){
-                  return(
-                    <div key={id} className={styles.skillInfo}>
-                      <div className={styles.skillImageContainer}>
-                        <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                      </div>
-                      <p>{skill.title}</p>
-                    </div>
-                  );
-                } 
-              })}
-          </div>
+        <motion.div className={styles.containerMotion} ref={constraintsRef}> 
+          <div className={styles.skills}>
 
-          <div  className={styles.skill}>
-            <h1 className={styles.skillTitle}>Back-end</h1>
-            {skills.map((skill, id) => {
-                if(skill.category == "back-end"){
-                  return(
-                    <div className={styles.skillInfo}>
-                      <div className={styles.skillImageContainer}>
-                        <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                      </div>
-                      <p>{skill.title}</p>
-                    </div>
-                  );
-                } 
-              })}
-          </div>
+            <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef}> 
+                <div  className={styles.skill}>
+                  <h1 className={styles.skillTitle}>Front-end</h1>
+                    {skills.map((skill, id) => {
+                      if(skill.category == "front-end"){
+                        return(
+                          <div key={id} className={styles.skillInfo}>
+                            <div className={styles.skillImageContainer}>
+                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                            </div>
+                            <p>{skill.title}</p>
+                          </div>
+                        );
+                      } 
+                    })}
+                </div>
+              </motion.div>
 
-          <div  className={styles.skill}>
-            <h1 className={styles.skillTitle}>Other</h1>
-            {skills.map((skill, id) => {
-                if(skill.category == "other"){
-                  return(
-                    <div className={styles.skillInfo}>
-                      <div className={styles.skillImageContainer}>
-                        <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                      </div>
-                      <p>{skill.title}</p>
-                    </div>
-                  );
-                } 
-              })}
+              <motion.div className={styles.itemMotionBack} drag dragConstraints={constraintsRef}> 
+                <div  className={styles.skill}>
+                  <h1 className={styles.skillTitle}>Back-end</h1>
+                  {skills.map((skill, id) => {
+                      if(skill.category == "back-end"){
+                        return(
+                          <div className={styles.skillInfo}>
+                            <div className={styles.skillImageContainer}>
+                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                            </div>
+                            <p>{skill.title}</p>
+                          </div>
+                        );
+                      } 
+                    })}
+                </div>
+              </motion.div>
+
+              <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef}> 
+                <div  className={styles.skill}>
+                  <h1 className={styles.skillTitle}>Other</h1>
+                  {skills.map((skill, id) => {
+                      if(skill.category == "other"){
+                        return(
+                          <div className={styles.skillInfo}>
+                            <div className={styles.skillImageContainer}>
+                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                            </div>
+                            <p>{skill.title}</p>
+                          </div>
+                        );
+                      } 
+                    })}
+                </div>
+              </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
