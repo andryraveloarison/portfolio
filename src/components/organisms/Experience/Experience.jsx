@@ -16,7 +16,6 @@ export const Experience = () => {
   const titleRef = useRef(null)
   const timelineRef = useRef(null)
   const dateRef = useRef(null)
-  const contentRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,
     offset:['start end','start 0.25']
@@ -25,22 +24,26 @@ export const Experience = () => {
 
 
   useEffect(()=>{
+
+
+
+
     gsap.to(timelineRef.current,{
       opacity: 1,
       duration: 12,
-      '--timeline-before-height': '100%', // Nouvelle hauteur
-      scrollTrigger:{
+      '--timeline-before-height': '100%', 
+        scrollTrigger:{
         trigger: timelineRef.current,
-        start: "-30px 60%",
-        end:"500px",
+        start: "30px 100%",
+        end:"900px",
         scrub:true,
-        markers: true,
         toggleActions: "restart pause reverse pause",
         opacity:1,
         duration: 0.2,
       },
 
     })
+   
   })
 
   
@@ -61,11 +64,12 @@ export const Experience = () => {
 
       {
           experiences.map((experience, id) => {
+          
             return(
-              <div className={styles.timelineItem} key={id}>
+              <div className={styles.timelineItem} key={id} >
                 <div className={styles.timelineDot}></div>
-                <div className={styles.timelineDate}>{experience.date}</div>
-                <div className={styles.timelineContent}>
+                <div className={styles.timelineDate} ref={dateRef}>{experience.date}</div>
+                <div className={styles.timelineContent} >
                   <h3>{experience.title}</h3>
                   <p> {experience.contents} </p>
                 </div>

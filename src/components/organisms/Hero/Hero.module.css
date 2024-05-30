@@ -9,9 +9,9 @@
   margin-left: 5%;
   margin-right: 5%;
   min-height: calc(100vh - 101px);
+  padding-top: 20vh;
 
 }
-
 
 .links {
   display: flex;
@@ -136,6 +136,7 @@
     flex-direction: column-reverse;
     justify-content: center;
     margin-top: 26px;
+    padding-top: 14vh;
   }
 
   .content {

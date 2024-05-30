@@ -115,12 +115,13 @@
 .timelineItem:nth-child(odd){
     padding-right: calc(50% + 30px);
 	text-align: right;
+  margin-left: var(--timeline-item-marginLeft);
 }
 
 .timelineItem:nth-child(even){
     padding-left: calc(50% + 30px);
     text-align: left;
-
+    margin-right: var(--timeline-item-marginRight);
 }
 
 .timelineDot{
