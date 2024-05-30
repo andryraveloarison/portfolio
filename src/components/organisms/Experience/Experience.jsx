@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Experience.module.css";
-import { getImageUrl } from "../../../utils.js";
-import contacts from "../../../data/contacts.json";
+import experiences from "../../../data/experiences.json";
 import { useRef } from "react";
 import Word from "../../atoms/Word/Word.jsx";
 import { useScroll } from "framer-motion";
@@ -34,58 +33,23 @@ export const Experience = () => {
 
 
 
-      <ul className={styles.links}>
+      <section className={styles.timelineSection}>
+        <div className={styles.timelineItems}>
 
-        {
-          contacts.map((contact, id) => {
+      {
+          experiences.map((experience, id) => {
             return(
-              <li key={id} className={styles.link}>
-                <img src={getImageUrl(contact.imageSrc)} alt="Email icon" className={styles.image}/>
-                <a href={contact.source} target="_blank">{contact.name}</a>
-              </li>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <div className={styles.timelineDate}>{experience.date}</div>
+                <div className={styles.timelineContent}>
+                  <h3>{experience.title}</h3>
+                  <p> {experience.contents} </p>
+                </div>
+              </div>
             )
           })
         }
-
-      </ul>
-
-      <section className={styles.timelineSection}>
-        <div className={styles.timelineItems}>
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineDot}></div>
-            <div className={styles.timelineDate}>2015</div>
-            <div className={styles.timelineContent}>
-              <h3>timeline item title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>
-    
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineDot}></div>
-            <div className={styles.timelineDate}>2015</div>
-            <div className={styles.timelineContent}>
-              <h3>timeline item title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>
-
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineDot}></div>
-            <div className={styles.timelineDate}>2015</div>
-            <div className={styles.timelineContent}>
-              <h3>timeline item title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>      
-
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineDot}></div>
-            <div className={styles.timelineDate}>2015</div>
-            <div className={styles.timelineContent}>
-              <h3>timeline item title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div> 
           
         </div>
       </section>
