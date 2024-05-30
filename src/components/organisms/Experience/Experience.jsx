@@ -1,21 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Experience.module.css";
 import experiences from "../../../data/experiences.json";
 import { useRef } from "react";
 import Word from "../../atoms/Word/Word.jsx";
 import { useScroll } from "framer-motion";
+import {gsap, Power3} from "gsap";
 
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const Experience = () => {
 
   const title = "MY EXPERIENCE "
   const titleRef = useRef(null)
+  const timelineRef = useRef(null)
+  const dateRef = useRef(null)
+  const contentRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,
     offset:['start end','start 0.25']
   })
-
   const words = title.split(" ")
+
+
+  useEffect(()=>{
+    gsap.to(timelineRef.current,{
+      opacity: 1,
+      duration: 12,
+      '--timeline-before-height': '100%', // Nouvelle hauteur
+      scrollTrigger:{
+        trigger: timelineRef.current,
+        start: "-30px 60%",
+        end:"500px",
+        scrub:true,
+        markers: true,
+        toggleActions: "restart pause reverse pause",
+        opacity:1,
+        duration: 0.2,
+      },
+
+    })
+  })
 
   
   return (
@@ -30,16 +56,13 @@ export const Experience = () => {
           }
         </h2>
       </div>
-
-
-
       <section className={styles.timelineSection}>
-        <div className={styles.timelineItems}>
+        <div className={styles.timelineItems} ref={timelineRef}>
 
       {
           experiences.map((experience, id) => {
             return(
-              <div className={styles.timelineItem}>
+              <div className={styles.timelineItem} key={id}>
                 <div className={styles.timelineDot}></div>
                 <div className={styles.timelineDate}>{experience.date}</div>
                 <div className={styles.timelineContent}>

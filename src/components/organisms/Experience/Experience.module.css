@@ -96,9 +96,10 @@
 	content: '';
 	position: absolute;
 	width: 2px;
-	height: 100%;
-	background-color: #2f363e;
+  height: var(--timeline-before-height);
+	background-color: rgb(40,241,254);
 	left: calc(50% - 1px);
+  opacity: 1;
 }
 
 .timelineItem{
