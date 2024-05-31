@@ -22,27 +22,48 @@ export const Experience = () => {
   })
   const words = title.split(" ")
 
+  const windowWidth = window.innerWidth;
 
   useEffect(()=>{
 
 
+    if (windowWidth > 830){
 
+      gsap.to(timelineRef.current,{
+        opacity: 1,
+        duration: 5,
+        '--timeline-before-height': '100%', 
+          scrollTrigger:{
+          trigger: timelineRef.current,
+          start: "30px 100%",
+          end:"900px",
+          scrub:true,
+          toggleActions: "restart pause reverse pause",
+          opacity:1,
+        },
+  
+      })
+    }else {
 
-    gsap.to(timelineRef.current,{
-      opacity: 1,
-      duration: 12,
-      '--timeline-before-height': '100%', 
-        scrollTrigger:{
-        trigger: timelineRef.current,
-        start: "30px 100%",
-        end:"900px",
-        scrub:true,
-        toggleActions: "restart pause reverse pause",
-        opacity:1,
-        duration: 0.2,
-      },
+      gsap.to(timelineRef.current,{
+        opacity: 1,
+        duration: 12,
+        '--timeline-before-height': '100%', 
+          scrollTrigger:{
+          trigger: timelineRef.current,
+          start: "30px 100%",
+          end:"900px",
+          scrub:true,
+          markers:true,
+          toggleActions: "restart pause reverse pause",
+          opacity:1,
+          duration: 0.2,
+        },
+  
+      })
+    }
 
-    })
+   
    
   })
 
