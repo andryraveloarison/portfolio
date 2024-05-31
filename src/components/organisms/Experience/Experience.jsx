@@ -53,7 +53,6 @@ export const Experience = () => {
           start: "0px 45%",
           end:"100%",
           scrub:true,
-          markers:true,
           toggleActions: "restart pause reverse pause",
           opacity:1,
           duration: 3,
@@ -68,7 +67,7 @@ export const Experience = () => {
 
   
   return (
-    <footer id="contact" className={styles.container}>
+    <footer id="experiences" className={styles.container}>
       <div className={styles.text}>
         <h2 className={styles.title} ref={titleRef}> 
           {

@@ -165,9 +165,7 @@
   .title {
     font-size: 30px;
   }
-  .container {
-    margin-top: 20vh;
-  }
+
 
   .content {
     flex-direction: column;
