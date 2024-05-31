@@ -47,17 +47,17 @@ export const Experience = () => {
 
       gsap.to(timelineRef.current,{
         opacity: 1,
-        duration: 15,
+        duration: 20,
         '--timeline-before-height': '100%', 
           scrollTrigger:{
           trigger: timelineRef.current,
-          start: "0px 60%",
+          start: "0px 50%",
           end:"900px",
           scrub:true,
           markers:true,
           toggleActions: "restart pause reverse pause",
           opacity:1,
-          duration: 0.2,
+          duration: 2,
         },
   
       })
