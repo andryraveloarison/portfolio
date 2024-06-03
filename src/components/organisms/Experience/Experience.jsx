@@ -38,7 +38,6 @@ export const Experience = () => {
           start: "40% 40%",
           end:"900px",
           scrub:true,
-          markers: true,
           toggleActions: "restart pause reverse pause",
           opacity:1,
         },
