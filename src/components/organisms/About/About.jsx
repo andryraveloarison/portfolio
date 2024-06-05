@@ -40,16 +40,13 @@ export const About = () => {
           })
         }
       </h2>
-      <motion.div className={styles.containerMotion} ref={constraintsRef}>
       <div className={styles.content}>
-          <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef} 
-          >               
+                      
               <img src={getImageUrl("about/aboutImage.png")}
                   alt="Me sitting with a laptop"
                   className={styles.aboutImage}
                   style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
                 />
-          </motion.div>
       <div>
 
         <div className={styles.aboutItems}>
@@ -68,8 +65,6 @@ export const About = () => {
         </div>
 
       </div>
-      </motion.div>
-
     </section>
   );
 };
