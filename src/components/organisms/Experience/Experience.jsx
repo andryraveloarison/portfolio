@@ -47,10 +47,11 @@ export const Experience = () => {
 
       gsap.to(timelineRef.current,{
         opacity: 1,
+        duration: 5,
         '--timeline-before-height': '100%', 
           scrollTrigger:{
           trigger: timelineRef.current,
-          start: "0px 30%",
+          start: "-10px 30%",
           end:"100%",
           scrub:true,
           markers:true,
