@@ -101,6 +101,8 @@
 
 .imageProfil {
   max-width: 25vw;
+  border-radius: 15px;
+
 }
 
 @media screen and (max-width: 970px) {

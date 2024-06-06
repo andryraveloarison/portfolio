@@ -12,7 +12,7 @@
   {
     "index": "02",
     "title": "Dominoes",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/daomy.png",
     "description": "Play dominoes with your friends even when you don't have dominoes or are far apart.",
     "skills": ["React", "Spring boot"],
     "demo": "https://www.example.com",
