@@ -27,6 +27,8 @@
 
 .aboutImage {
   width: 40vw;
+  min-width: 250px;
+  max-width: 450px;
 }
 
 .aboutItems {
@@ -134,5 +136,9 @@
     margin-top: 29px;
     text-align: center;
   }
+
+  .aboutItem{
+    padding:0;
+    }
 
 }
