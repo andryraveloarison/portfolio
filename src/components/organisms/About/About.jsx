@@ -42,7 +42,7 @@ export const About = () => {
       </h2>
       <div className={styles.content}>
                       
-              <img src={getImageUrl("about/aboutImage.png")}
+              <img src={getImageUrl("about/Andry.jpg")}
                   alt="Me sitting with a laptop"
                   className={styles.aboutImage}
                   style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
