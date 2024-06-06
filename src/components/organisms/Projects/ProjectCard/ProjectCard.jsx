@@ -190,6 +190,7 @@ export const ProjectCard = ({
         <img
           src={getImageUrl(imageSrc)}
           alt="Hero image of me"
+          className={styles.imageProfil}
         />
       </div>
 

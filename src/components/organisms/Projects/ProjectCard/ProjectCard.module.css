@@ -99,10 +99,19 @@
   width: 20px;
 }
 
+.imageProfil {
+  max-width: 25vw;
+}
+
 @media screen and (max-width: 970px) {
   .projectTitle {
     width: 20vw;
   }
+
+  .imageProfil {
+    max-width: 70vw;
+  }
+
 }
 @media screen and (max-width: 910px) {
   .container {

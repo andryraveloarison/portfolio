@@ -2,7 +2,7 @@
   {
     "index": "01",
     "title": "Site Helpdesk",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/helpDesk.png",
     "description": "Create a ticket and chat with our IT specialists to resolve your issue.",
     "skills": ["React","Prisma", "NodeJs","Tailwind","Postgresql"],
     "demo": "https://www.example.com",
