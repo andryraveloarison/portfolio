@@ -35,7 +35,7 @@ export const Experience = () => {
         '--timeline-before-height': '100%', 
           scrollTrigger:{
           trigger: timelineRef.current,
-          start: "0% 40%",
+          start: "80% 40%",
           end:"900px",
           scrub:true,
           markers:true,
