@@ -36,7 +36,7 @@ export const Experience = () => {
           scrollTrigger:{
           trigger: timelineRef.current,
           start: "80% 40%",
-          end:"150%",
+          end:"200%",
           scrub:true,
           markers:true,
           toggleActions: "restart pause reverse pause",
@@ -52,7 +52,7 @@ export const Experience = () => {
         '--timeline-before-height': '100%', 
           scrollTrigger:{
           trigger: timelineRef.current,
-          start: "-50px 20%",
+          start: "-150px 20%",
           end:"150%",
           scrub:true,
           toggleActions: "restart pause reverse pause",
