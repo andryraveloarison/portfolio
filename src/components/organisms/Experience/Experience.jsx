@@ -61,16 +61,12 @@ export const Experience = () => {
   
       })
     }
-
-   
-   
   })
 
   
   return (
-    <footer id="experiences" className={styles.container}>
-      <div className={styles.text}>
-        <h2 className={styles.title} ref={titleRef}> 
+    <footer className={styles.container}>
+        <h2 id="experiences" className={styles.title} ref={titleRef}> 
           {
             words.map((word,i)=>{
               const start = i / words.length
@@ -78,7 +74,6 @@ export const Experience = () => {
             })
           }
         </h2>
-      </div>
       <section className={styles.timelineSection}>
         <div className={styles.timelineItems} ref={timelineRef}>
 
