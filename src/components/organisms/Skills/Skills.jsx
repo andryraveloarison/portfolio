@@ -41,7 +41,7 @@ export const Skills = () => {
                 x: "-10%", opacity: 1
               }}
               viewport={{
-                margin: "-30%"
+                margin: "-20%"
               }}
               className={styles.itemMotion} 
               drag 
@@ -68,10 +68,10 @@ export const Skills = () => {
               <motion.div 
                 initial={{ x: "100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
                 whileInView={{
-                  x: "10%", opacity: 1
+                  x: "10%", opacity:1
                 }}
                 viewport={{
-                  margin: "-30%"
+                  margin: "-20%"
                 }}
                 className={styles.itemMotionBack} 
                 drag dragConstraints={constraintsRef}
@@ -99,8 +99,9 @@ export const Skills = () => {
                   x: "-10%", opacity: 1
                 }}
                 viewport={{
-                  margin: "-30%"
+                  margin: "-20%"
                 }}
+                
                 className={styles.itemMotion} 
                 drag dragConstraints={constraintsRef}
               > 
