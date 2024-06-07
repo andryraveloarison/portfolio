@@ -40,7 +40,9 @@ export const Skills = () => {
               whileInView={{
                 x: "-10%", opacity: 1
               }}
-            
+              viewport={{
+                margin: "-30%"
+              }}
               className={styles.itemMotion} 
               drag 
               dragConstraints={constraintsRef}
@@ -69,7 +71,7 @@ export const Skills = () => {
                   x: "10%", opacity: 1
                 }}
                 viewport={{
-                  margin: "-10%"
+                  margin: "-30%"
                 }}
                 className={styles.itemMotionBack} 
                 drag dragConstraints={constraintsRef}
@@ -97,7 +99,7 @@ export const Skills = () => {
                   x: "-10%", opacity: 1
                 }}
                 viewport={{
-                  margin: "-50%"
+                  margin: "-30%"
                 }}
                 className={styles.itemMotion} 
                 drag dragConstraints={constraintsRef}
