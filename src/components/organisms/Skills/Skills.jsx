@@ -35,7 +35,19 @@ export const Skills = () => {
         <motion.div className={styles.containerMotion} ref={constraintsRef}> 
           <div className={styles.skills}>
 
-            <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef}> 
+            <motion.div 
+              initial={{ x: "-100%" , opacity: 0}} // Ajustez ici pour représenter -100% de la largeur du viewport
+              whileInView={{
+                x: "-10%", opacity: 1
+              }}
+              viewport={{
+                margin: "-100%"
+              }}
+              className={styles.itemMotion} 
+              drag 
+              dragConstraints={constraintsRef}
+            >
+
                 <div  className={styles.skill}>
                   <h1 className={styles.skillTitle}>Front-end</h1>
                     {skills.map((skill, id) => {
@@ -53,7 +65,17 @@ export const Skills = () => {
                 </div>
               </motion.div>
 
-              <motion.div className={styles.itemMotionBack} drag dragConstraints={constraintsRef}> 
+              <motion.div 
+                initial={{ x: "100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
+                whileInView={{
+                  x: "10%", opacity: 1
+                }}
+                viewport={{
+                  margin: "-100%"
+                }}
+                className={styles.itemMotionBack} 
+                drag dragConstraints={constraintsRef}
+              > 
                 <div  className={styles.skill}>
                   <h1 className={styles.skillTitle}>Back-end</h1>
                   {skills.map((skill, id) => {
@@ -71,7 +93,17 @@ export const Skills = () => {
                 </div>
               </motion.div>
 
-              <motion.div className={styles.itemMotion} drag dragConstraints={constraintsRef}> 
+              <motion.div 
+                initial={{ x: "-100%" , opacity: 0}} // Ajustez ici pour représenter -100% de la largeur du viewport
+                whileInView={{
+                  x: "-10%", opacity: 1
+                }}
+                viewport={{
+                  margin: "-100%"
+                }}
+                className={styles.itemMotion} 
+                drag dragConstraints={constraintsRef}
+              > 
                 <div  className={styles.skill}>
                   <h1 className={styles.skillTitle}>Other</h1>
                   {skills.map((skill, id) => {

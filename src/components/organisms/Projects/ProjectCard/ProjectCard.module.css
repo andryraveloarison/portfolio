@@ -102,16 +102,11 @@
 .imageProfil {
   max-width: 25vw;
   border-radius: 15px;
-
 }
 
 @media screen and (max-width: 970px) {
   .projectTitle {
     width: 20vw;
-  }
-
-  .imageProfil {
-    max-width: 70vw;
   }
 
 }
@@ -143,4 +138,12 @@
     margin-top: -25px;
   }
   
+  .imageProfil {
+    max-width: 70vw;
+  }
+
 }
+
+
+
+
