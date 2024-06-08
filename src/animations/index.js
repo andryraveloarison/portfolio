@@ -124,6 +124,6 @@ export const animateHero = (ref1, ref2,ref3,ref4)=> {
       duration: 1,
     });
 
-  }, 2700)
+  }, 2900)
 
 }
