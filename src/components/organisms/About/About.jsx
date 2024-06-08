@@ -1,24 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../../utils";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import Word from "../../atoms/Word/Word.jsx";
 import { useScroll } from "framer-motion";
+import {gsap} from "gsap";
 
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
 
-  const constraintsRef = useRef(null);
-
   const title = "ABOUT ME "
   const titleRef = useRef(null)
+  const imageRef = useRef(null)
+
   const {scrollYProgress} = useScroll({
     target: titleRef,
     offset:['start end','start 0.25']
   })
 
   const words = title.split(" ")
+
+
+  useEffect(() => {
+
+    gsap.to(imageRef.current,{
+      opacity: 1,
+      duration: 0.5,
+      scale:1,
+      scrollTrigger:{
+        trigger: imageRef.current,
+        start: "0% 400%",
+        scrub:true,
+        markers:true,
+        toggleActions: "restart pause reverse pause"
+      },
+
+    })
+
+
+  })
+
+
 
 
   return (
@@ -33,20 +59,17 @@ export const About = () => {
         }
       </h2>
       
-        <div className={styles.content}>
-          <motion.div 
-            initial={{ scale: 0}} // Ajustez ici pour représenter -100% de la largeur du viewport
-            whileInView={{ scale: 1 }}
-               
-          >        
+        <div className={styles.content} ref={imageRef}>
+      
             <img src={getImageUrl("about/Andry.jpg")}
                 alt="Me sitting with a laptop"
                 className={styles.aboutImage}
-                style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
+                style={{ pointerEvents: 'none' }} 
+                
               />
-          </motion.div>
 
         <div>
+
 
 
         <div className={styles.aboutItems}>
