@@ -35,9 +35,8 @@ export const About = () => {
       
         <div className={styles.content}>
           <motion.div 
-            initial={{ scale: 0.5}} // Ajustez ici pour représenter -100% de la largeur du viewport
+            initial={{ scale: 0}} // Ajustez ici pour représenter -100% de la largeur du viewport
             whileInView={{ scale: 1 }}
-            transition={{ duration: 0.2 }}     
                
           >        
             <img src={getImageUrl("about/Andry.jpg")}
