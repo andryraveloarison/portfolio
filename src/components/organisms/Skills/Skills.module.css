@@ -190,6 +190,16 @@
     gap: 9px;
   }
 
+  .itemMotionBack {
+    margin-left: 0;
+    min-width: 150px;
+  }
+
+  .itemMotion {
+    margin-left: 0;
+    min-width: 150px;
+  }
+  
 }
 
 
