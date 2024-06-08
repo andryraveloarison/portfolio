@@ -11,7 +11,7 @@ export const Skills = () => {
 
   const constraintsRef = useRef(null);
 
-  const title = "MY SKYLLS "
+  const title = "MY SKILLS "
   const titleRef = useRef(null)
   const {scrollYProgress} = useScroll({
     target: titleRef,
