@@ -28,15 +28,19 @@ export const About = () => {
   useEffect(() => {
 
     gsap.to(imageRef.current,{
-      opacity: 1,
-      duration: 0.5,
-      scale:1,
+      
       scrollTrigger:{
         trigger: imageRef.current,
         start: "0% 400%",
         scrub:true,
-        toggleActions: "restart pause reverse pause"
+        toggleActions: "restart pause reverse pause",
+        opacity: 1,
+        duration: 0.5,
+        scale:1,
       },
+      opacity: 1,
+      duration: 0.5,
+      scale:1,
 
     })
 
