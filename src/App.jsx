@@ -19,7 +19,7 @@ function App() {
           zIndex:-1
         });      
 
-      }, 2000);
+      }, 2500);
     };
 
     fakeDataFetch();
