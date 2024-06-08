@@ -139,4 +139,8 @@
     padding:0;
     }
 
+
+    .aboutItemText {
+      align-items:center;
+    }
 }

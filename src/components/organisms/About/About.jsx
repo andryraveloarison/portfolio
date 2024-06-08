@@ -20,14 +20,6 @@ export const About = () => {
 
   const words = title.split(" ")
 
-  const handleMouseDown = () => {
-    document.body.style.cursor = 'grabbing';
-  };
-
-  // Fonction pour restaurer le curseur normal
-  const handleMouseUp = () => {
-    document.body.style.cursor = '';
-  };
 
   return (
     <section className={styles.container} id="about">
@@ -40,25 +32,57 @@ export const About = () => {
           })
         }
       </h2>
-      <div className={styles.content}>
-                      
-              <img src={getImageUrl("about/Andry.jpg")}
-                  alt="Me sitting with a laptop"
-                  className={styles.aboutImage}
-                  style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
-                />
-      <div>
+      
+        <div className={styles.content}>
+          <motion.div 
+            initial={{ scale: 0.5}} // Ajustez ici pour représenter -100% de la largeur du viewport
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.2 }}     
+               
+          >        
+            <img src={getImageUrl("about/Andry.jpg")}
+                alt="Me sitting with a laptop"
+                className={styles.aboutImage}
+                style={{ pointerEvents: 'none' }} // Ajoutez cette ligne
+              />
+          </motion.div>
+
+        <div>
+
 
         <div className={styles.aboutItems}>
           <div className={styles.aboutItem}>
-            <div className={styles.aboutItemText}>
-              <h1 >Web Developer</h1>
-              <p>
-                  Having a first successful experience in the
-                  web development, I am currently open to all
-                  new opportunities in this area.
-              </p>
-            </div>
+          
+
+              <div className={styles.aboutItemText}>
+                  <motion.div 
+                    initial={{ x: "-100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
+                    whileInView={{
+                      x: 0, opacity:1
+                    }}
+                    transition={{ duration: 0.2 }}   
+                           
+                  >
+
+                    <h1 >Web Developer</h1>
+                  </motion.div>
+                  <motion.div 
+                    initial={{ x: "-100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
+                    whileInView={{
+                      x: 0, opacity:1
+                    }}
+                    transition={{ duration: 0.5 }}  
+          
+                  >
+                    <p>
+                        Having a first successful experience in the
+                        web development, I am currently open to all
+                        new opportunities in this area.
+                    </p>
+                  </motion.div>
+              </div>
+            
+
           </div>
 
         </div>
