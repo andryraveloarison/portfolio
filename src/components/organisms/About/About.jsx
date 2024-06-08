@@ -34,9 +34,7 @@ export const About = () => {
       scrollTrigger:{
         trigger: imageRef.current,
         start: "0% 400%",
-        end:"50px",
         scrub:true,
-        markers:true,
         toggleActions: "restart pause reverse pause"
       },
 
