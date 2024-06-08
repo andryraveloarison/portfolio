@@ -1,7 +1,7 @@
 [
   {
       "category":"front-end",
-      "title": "React",
+      "title": "React Js",
       "imageSrc": "skills/react.png"
   },
   {
@@ -28,5 +28,10 @@
       "category":"other",
       "title": "github",
       "imageSrc": "skills/githubIcon.png"
-  }
+  },
+  {
+    "category":"other",
+    "title": "React native",
+    "imageSrc": "skills/react.png"
+    }
 ]
