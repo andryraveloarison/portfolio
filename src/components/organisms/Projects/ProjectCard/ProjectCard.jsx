@@ -108,10 +108,11 @@ export const ProjectCard = ({
     gsap.to(imageRef.current, {
       opacity: 1,
       ease: Power3.easeOut,
-      duration: 1,
+      duration: 0.7,
       scale: 1.1,
       marginLeft: -40,
-      marginTop: -30
+      marginTop: -30,
+      rotate: -5
     }); 
 
     gsap.to(indexRef.current, {
@@ -143,6 +144,7 @@ export const ProjectCard = ({
       ease: Power3.easeOut,
       duration: 1,
       scale: 1,
+      rotate: 0
     }); 
 
     gsap.to(indexRef.current, {
