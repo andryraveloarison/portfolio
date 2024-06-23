@@ -112,7 +112,6 @@ export const ProjectCard = ({
       scale: 1.1,
       marginLeft: -40,
       marginTop: -30,
-      rotate: -5
     }); 
 
     gsap.to(indexRef.current, {
