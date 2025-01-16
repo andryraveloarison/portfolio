@@ -18,5 +18,15 @@
     "demo": "https://www.example.com",
     "source": "https://www.github.com",
     "date": "2024"
+  },
+  {
+    "index": "03",
+    "title": "Smart sales Insights",
+    "imageSrc": "projects/ssi.png",
+    "description": "Empower your sales with data-driven decisions",
+    "skills": ["React", "TypeScript", "Nest", "Postgresql","Flask"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com",
+    "date": "2024"
   }
 ]

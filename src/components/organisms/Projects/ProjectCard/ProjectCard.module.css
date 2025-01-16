@@ -100,7 +100,8 @@
 }
 
 .imageProfil {
-  max-width: 25vw;
+  width: 22vw;
+  height: 27vh;
   border-radius: 15px;
 }
 
@@ -139,7 +140,8 @@
   }
   
   .imageProfil {
-    max-width: 70vw;
+    width: 70vw;
+    height: 22vh;
   }
 
 }
