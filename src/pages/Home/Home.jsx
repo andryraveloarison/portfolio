@@ -4,20 +4,19 @@ import { Skills } from "../../components/organisms/Skills/Skills.jsx";
 import { Hero } from "../../components/organisms/Hero/Hero.jsx";
 import { Navbar } from "../../components/organisms/Navbar/Navbar.jsx";
 import { Projects } from "../../components/organisms/Projects/ProjectInfo/ProjectInfo.jsx";
-import {About} from "../../components/organisms/About/About.jsx"
+import { About } from "../../components/organisms/About/About.jsx"
 import { Experience } from "../../components/organisms/Experience/Experience.jsx";
 
 function Home() {
 
   return (
     <div className={styles.Home}>
-          <Navbar />
-          <Hero />
-          <Projects />
-          <About />
-          <Experience />
-          <Skills />
-          <Contact />
+      <Hero />
+      <Projects />
+      <About />
+      <Experience />
+      <Skills />
+      <Contact />
     </div>
   );
 }
