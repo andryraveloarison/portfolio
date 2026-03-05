@@ -32,31 +32,31 @@ export const animatePreloader = (ref1, ref2, ref3) => {
 
 
 
- const animateDev = (ref) => {
+const animateDev = (ref) => {
   gsap.to(ref, {
     opacity: 1,
     y: -50,
-    rotate:0,
+    rotate: 0,
     ease: Power3.easeOut,
     duration: 1,
   });
 };
 
- const animateCreat = (ref) => {
+const animateCreat = (ref) => {
   gsap.to(ref, {
     opacity: 1,
     y: -50,
-    rotate:0,
+    rotate: 0,
     ease: Power3.easeOut,
     duration: 1,
   });
 };
 
- const animatePass = (ref) => {
+const animatePass = (ref) => {
   gsap.to(ref, {
     opacity: 1,
     y: -50,
-    rotate:0,
+    rotate: 0,
     ease: Power3.easeOut,
     duration: 1,
   });
@@ -73,7 +73,7 @@ const reAnimateDev = (ref) => {
   });
 };
 
- const reAnimateCreat = (ref) => {
+const reAnimateCreat = (ref) => {
   gsap.to(ref, {
     y: 40,
     rotate: -40,
@@ -82,7 +82,7 @@ const reAnimateDev = (ref) => {
   });
 };
 
- const reAnimatePass = (ref) => {
+const reAnimatePass = (ref) => {
   gsap.to(ref, {
     y: 40,
     rotate: -40,
@@ -94,7 +94,7 @@ const reAnimateDev = (ref) => {
 
 
 
-export const animateHero = (ref1, ref2,ref3,ref4)=> {
+export const animateHero = (ref1, ref2, ref3, ref4, bgTextRef, imageRef) => {
   setTimeout(() => {
 
     gsap.to(ref1.current, {
@@ -122,6 +122,36 @@ export const animateHero = (ref1, ref2,ref3,ref4)=> {
       y: -50,
       ease: Power3.easeOut,
       duration: 1,
+    });
+
+    // Animation staggered pour les contacts (li)
+    const contactItems = ref4.current.querySelectorAll('li');
+    gsap.to(contactItems, {
+      opacity: 1,
+      stagger: 0.2,
+      ease: Power3.easeOut,
+      duration: 0.8,
+      delay: 0.5
+    });
+
+    // Animation pour "ANDRY" (bgText)
+    gsap.to(bgTextRef.current, {
+      opacity: 0.225, // Valeur finale dans le CSS
+      y: 0,
+      scale: 1,
+      ease: Power3.easeOut,
+      duration: 1.5,
+      delay: 0.5
+    });
+
+    // Animation pour l'image de profil
+    gsap.to(imageRef.current, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      ease: Power3.easeOut,
+      duration: 1.2,
+      delay: 0.8
     });
 
   }, 2900)

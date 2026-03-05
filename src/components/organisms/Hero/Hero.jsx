@@ -9,9 +9,11 @@ export const Hero = () => {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const linkRef = useRef(null);
+  const bgTextRef = useRef(null);
+  const imageRef = useRef(null);
 
   useLayoutEffect(() => {
-    animateHero(helloRef, titleRef, descriptionRef, linkRef);
+    animateHero(helloRef, titleRef, descriptionRef, linkRef, bgTextRef, imageRef);
   }, []);
 
   return (
@@ -29,11 +31,12 @@ export const Hero = () => {
       </div>
 
       <div className={styles.imageContainer}>
-        <div className={styles.backgroundText}>ANDRY</div>
+        <div className={styles.backgroundText} ref={bgTextRef}>ANDRY</div>
         <img
           src={getImageUrl("hero/pdc.png")}
           alt="Andry Raveloarison"
           className={styles.heroImg}
+          ref={imageRef}
         />
       </div>
 

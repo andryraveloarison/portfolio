@@ -8,17 +8,17 @@ const PreLoader = () => {
   const passRef = useRef(null);
 
   useEffect(() => {
-    animatePreloader(devRef,creatRef,passRef)
+    animatePreloader(devRef, creatRef, passRef)
   }, []);
 
   return (
-    <div className={styles.preLoaderRef}>
+    <div className={styles.preloader}>
       <div className={styles.textsContainer}>
         <span className={styles.span} ref={devRef}>Developer,</span>
         <span className={styles.span} ref={creatRef}>Creator,</span>
         <span className={styles.span} ref={passRef}>Passionate.</span>
       </div>
-    </div> 
+    </div>
   );
 };
 

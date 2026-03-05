@@ -13,7 +13,7 @@ function App() {
     const fakeDataFetch = () => {
       setTimeout(() => {
         gsap.to(preLoaderRef.current, {
-          opacity: 0.9,
+          opacity: 0,
           y: 900,
           ease: Power3.easeOut,
           duration: 3,
