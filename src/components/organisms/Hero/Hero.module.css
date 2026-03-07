@@ -8,7 +8,7 @@
   justify-content: flex-start;
   min-height: 100vh;
   padding: 80px 20px;
-  background: radial-gradient(circle at center, #ffffff 0%, #f0f4f8 100%);
+  background: radial-gradient(circle at center, #dbdbdbda 0%, #0462a1d5 100%);
   overflow: hidden;
 }
 
@@ -22,14 +22,14 @@
 .badge {
   display: inline-block;
   padding: 4px 12px;
-  background: #f3f0ff;
+  background: #f3f0ff7c;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .badge span {
   font-size: 0.8rem;
-  color: #a78bfa;
+  color: #4319c3;
   font-weight: 500;
 }
 
@@ -47,7 +47,7 @@
 
 .description {
   font-size: 1.1rem;
-  color: #666;
+  color: #111111;
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;

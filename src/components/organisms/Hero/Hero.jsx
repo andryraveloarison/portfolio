@@ -19,8 +19,8 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.topContent}>
-        <div className={styles.badge}>
-          <span>💡 Passionate Developer</span>
+        <div className={styles.badge} ref={helloRef}>
+          <span>🌀 Andry RAVELOARISON</span>
         </div>
         <h1 className={styles.title} ref={titleRef}>
           Fullstack JS <span className={styles.highlight}>Developer</span>
