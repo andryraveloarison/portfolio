@@ -20,13 +20,13 @@ export const Hero = () => {
     <section className={styles.container}>
       <div className={styles.topContent}>
         <div className={styles.badge}>
-          <span>💡 Première ESN franco-malgache en 2025</span>
+          <span>💡 Passionate Developer</span>
         </div>
         <h1 className={styles.title} ref={titleRef}>
-          A propos de <span className={styles.highlight}>Fluentech</span>
+          Fullstack JS <span className={styles.highlight}>Developer</span>
         </h1>
         <p className={styles.description} ref={descriptionRef}>
-          Une équipe <strong>franco-malgache</strong> qui accompagne les entreprises dans la <strong>conception</strong> et le <strong>développement</strong> de produits digitaux d'excellence, transparence et
+          I am a <strong>fullstack developer</strong> passionate about creating innovative and high-performance digital products. I specialize in web and mobile development, and I am also experienced in artificial intelligence.
         </p>
       </div>
 
