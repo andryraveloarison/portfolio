@@ -121,7 +121,7 @@ export const animateHero = (ref1, ref2, ref3, ref4, bgTextRef, imageRef) => {
       opacity: 1,
       y: -50,
       ease: Power3.easeOut,
-      duration: 1,
+      duration: 2,
     });
 
     // Animation staggered pour les contacts (li)
@@ -130,8 +130,8 @@ export const animateHero = (ref1, ref2, ref3, ref4, bgTextRef, imageRef) => {
       opacity: 1,
       stagger: 0.2,
       ease: Power3.easeOut,
-      duration: 0.8,
-      delay: 0.5
+      duration: 1.8,
+      delay: 0.8
     });
 
     // Animation pour "ANDRY" (bgText)
