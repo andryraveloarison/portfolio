@@ -1,39 +1,59 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./ProjectInfo.module.css";
 import projects from "../../../../data/projects.json";
-import { ProjectCard } from "../ProjectCard/ProjectCard.jsx";
-import { useRef } from "react";
-import { useScroll } from "framer-motion";
-import Word from "../../../atoms/Word/Word.jsx";
+import { getImageUrl } from "../../../../utils";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
-  const title = "ALL MY PROJECTS "
-  const titleRef = useRef(null)
-  const {scrollYProgress} = useScroll({
-    target: titleRef,
-    offset:['start end','start 0.25']
-  })
-
-  const words = title.split(" ")
-  
   return (
     <section className={styles.container} id="projects">
-      <h2 className={styles.title} ref={titleRef}>
-        {
-          words.map((word,i)=>{
-            const start = i / words.length
-            return <Word key={i} range={[start, 1]} progress ={scrollYProgress}>{word}</Word>
-          })
-        }
-        </h2>
-      <div className={styles.projects}>
-        {projects.map((project, id) => {
-          return <ProjectCard key={id} project={project} />;
-        })}
+      {/* Chapter label */}
+      <div className={styles.chapterLabel}>
+        <span className={styles.chapterLine} />
+        <span className={styles.chapterText}>CHAPTER 02 · SELECTED WORK</span>
+      </div>
+
+      <div className={styles.header}>
+        <h2 className={styles.sectionTitle}>Projects</h2>
+      </div>
+
+      <div className={styles.projectList}>
+        {projects.map((project, id) => (
+          <motion.div
+            key={id}
+            className={styles.projectRow}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: id * 0.1, ease: "easeOut" }}
+          >
+            <div className={styles.projectTop}>
+              <span className={styles.projectNum}>{project.index}</span>
+              <h3 className={styles.projectName}>{project.title}</h3>
+              <span className={styles.projectDate}>{project.date}</span>
+              <div className={styles.projectLinks}>
+                <a href={project.source} target="_blank" rel="noreferrer" className={styles.projectLink}>
+                  Source ↗
+                </a>
+                <a href={project.demo} target="_blank" rel="noreferrer" className={styles.projectLink}>
+                  Demo ↗
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.projectBottom}>
+              <p className={styles.projectDesc}>{project.description}</p>
+              <div className={styles.techList}>
+                {project.skills.map((skill, si) => (
+                  <span key={si} className={styles.techTag}>{skill}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.projectDivider} />
+          </motion.div>
+        ))}
       </div>
     </section>
   );
 };
-
-
-

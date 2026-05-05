@@ -1,108 +1,142 @@
-@import "../../../vars.css";
-
 .container {
-  margin-top: 20vh;
-  color: var(--color-text);
-  width: 100vw;
-  padding: 58px 10%;
-  gap: 10px;
-  text-align: center;
-  padding-bottom: 10px;
+  padding: var(--section-pad) var(--content-pad) 0;
+  background: var(--black);
+  position: relative;
+  z-index: 1;
 }
 
-.footer {
-  padding-top: 10rem;
-}
-.title {
-
-  color: var(--color-text);
-  font-size: 35px;
-  font-weight: 700;
-  letter-spacing: 1.75px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.image {
-  width: 30px;
-  padding: 0.3rem;
-}
-
-.text p {
-  margin-top: 2.5rem;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  padding-top: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.link {
+.chapterLabel {
   display: flex;
   align-items: center;
-  border-color: rgba(87, 87, 87, 0.377);
-  border-radius: 18px;
-  padding-left: 10px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-image: linear-gradient(
-    100deg,
-    rgba(3, 161, 214, 0.42) 10%,
-    rgba(255, 255, 255, 0) 90%
-  );
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
-  border-style: solid;
-  border-width: 0.1px;
+  gap: 14px;
+  margin-bottom: 60px;
 }
 
-.link:hover  {
-  background-size: 100% 100%;
-
+.chapterLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(240, 237, 229, 0.3);
+  flex-shrink: 0;
 }
 
-.link a {
-  color: var(--color-text);
+.chapterText {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a8880;
+}
+
+/* ── MAIN CONTENT ────────────────────── */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(240, 237, 229, 0.1);
+}
+
+.bigCta {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1.05;
+}
+
+.bigCta em {
+  font-style: italic;
+  color: #8a8880;
+}
+
+/* ── RIGHT BLOCK ─────────────────────── */
+.rightBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 12px;
+}
+
+.contactText {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #8a8880;
+  font-weight: 300;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(240, 237, 229, 0.1);
   text-decoration: none;
-  font-size:medium;
-  font-weight: 500;
-  letter-spacing: 1.5px;
+  transition: padding-left 0.25s;
 }
 
+.contactLink:hover {
+  padding-left: 12px;
+}
 
+.contactLink img {
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.2s;
+}
 
-@media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column;
-    gap: 23px;
-    margin-top: 20vh;
-  }
+.contactLink:hover img {
+  opacity: 0.9;
+}
 
-  .title {
-    font-size: 30px;
-  }
+.contactLink span:nth-child(2) {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  flex: 1;
+  transition: color 0.2s;
+}
 
-  .text p {
-    margin-top: 2.5rem;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-  }
+.arrow {
+  font-size: 1rem;
+  color: var(--red);
+  transition: transform 0.2s;
+}
 
+.contactLink:hover .arrow {
+  transform: translate(3px, -3px);
+}
 
-  .links {
-    align-items: center;
+/* ── FOOTER BAR ──────────────────────── */
+.footerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.footerLeft,
+.footerRight {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 }

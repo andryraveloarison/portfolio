@@ -1,14 +1,19 @@
 :root {
   /* Colours */
-  --color-text: #fff;
-  --color-primary: #576cbc;
-  --color-secondary: #19376d;
-  --color-dark: #0b2447;
-  --color-bg: #04152d;
-  --text-dark: #04152d;
-  --bg-grey: rgb(14 14 14 / 78%);
-
+  --cream: #f0ede5;
+  --cream-dark: #e5e1d5;
+  --black: #0c0c0c;
+  --red: #cc2222;
+  --grey: #8a8880;
+  --border: rgba(12, 12, 12, 0.12);
+  --border-strong: rgba(12, 12, 12, 0.3);
 
   /* Fonts */
-  --font-roboto: "Roboto";
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-sans: 'Inter', Arial, sans-serif;
+
+  /* Spacing */
+  --section-pad: clamp(80px, 10vh, 140px);
+  --content-pad: clamp(24px, 5vw, 80px);
 }

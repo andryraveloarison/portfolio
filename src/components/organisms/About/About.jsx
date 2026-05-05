@@ -1,118 +1,96 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../../utils";
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import Word from "../../atoms/Word/Word.jsx";
-import { useScroll } from "framer-motion";
-import { gsap } from "gsap";
-
-
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
-
-  const title = "ABOUT ME "
-  const titleRef = useRef(null)
-  const imageRef = useRef(null)
-
-  const { scrollYProgress } = useScroll({
-    target: titleRef,
-    offset: ['start end', 'start 0.25']
-  })
-
-  const words = title.split(" ")
-
-
-  useEffect(() => {
-
-    gsap.to(imageRef.current, {
-
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "0% 400%",
-        scrub: true,
-        toggleActions: "restart pause reverse pause",
-        opacity: 1,
-        duration: 0.5,
-        scale: 1,
-      },
-      opacity: 1,
-      duration: 0.5,
-      scale: 1,
-
-    })
-
-
-  })
-
-
-
-
   return (
     <section className={styles.container} id="about">
+      <div className={styles.chapterLabel}>
+        <span className={styles.chapterLine} />
+        <span className={styles.chapterText}>CHAPTER 03 · ABOUT ME</span>
+      </div>
 
-      <h2 className={styles.title} ref={titleRef}>
-        {
-          words.map((word, i) => {
-            const start = i / words.length
-            return <Word key={i} range={[start, 1]} progress={scrollYProgress}>{word}</Word>
-          })
-        }
-      </h2>
+      <div className={styles.mainGrid}>
+        {/* Left: text */}
+        <div className={styles.leftCol}>
+          <motion.h2
+            className={styles.sectionTitle}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            About<br /><em>Me.</em>
+          </motion.h2>
 
-      <div className={styles.content} ref={imageRef}>
+          <motion.div
+            className={styles.textBlock}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          >
+            <p>
+              I am <strong>Andry Raveloarison</strong>, a fullstack JavaScript
+              developer based in Antananarivo, Madagascar. I build web and mobile
+              applications with a strong focus on clean code, user experience,
+              and performance.
+            </p>
+            <p>
+              With experience spanning front-end React interfaces to Node.js
+              back-ends and Spring Boot APIs, I bring a product-minded approach
+              to every project.
+            </p>
+            <p>
+              I am currently open to new opportunities, freelance or full-time,
+              local or remote.
+            </p>
+          </motion.div>
 
-        <img src={getImageUrl("about/image.jpeg")}
-          alt="Me sitting with a laptop"
-          className={styles.aboutImage}
-          style={{ pointerEvents: 'none' }}
-
-        />
-
-        <div>
-
-
-
-          <div className={styles.aboutItems}>
-            <div className={styles.aboutItem}>
-
-
-              <div className={styles.aboutItemText}>
-                <motion.div
-                  initial={{ x: "-100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
-                  whileInView={{
-                    x: 0, opacity: 1
-                  }}
-                  transition={{ duration: 0.2 }}
-
-                >
-
-                  <h1 >Web Developer</h1>
-                </motion.div>
-                <motion.div
-                  initial={{ x: "-100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
-                  whileInView={{
-                    x: 0, opacity: 1
-                  }}
-                  transition={{ duration: 0.5 }}
-
-                >
-                  <p>
-                    Having a first successful experience in the
-                    web development, I am currently open to all
-                    new opportunities in this area.
-                  </p>
-                </motion.div>
-              </div>
-
-
+          <motion.div
+            className={styles.statsRow}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            <div className={styles.stat}>
+              <span className={styles.statNum}>3+</span>
+              <span className={styles.statLabel}>Years of<br/>Experience</span>
             </div>
-
-          </div>
+            <div className={styles.statDivider} />
+            <div className={styles.stat}>
+              <span className={styles.statNum}>10+</span>
+              <span className={styles.statLabel}>Projects<br/>Completed</span>
+            </div>
+            <div className={styles.statDivider} />
+            <div className={styles.stat}>
+              <span className={styles.statNum}>3</span>
+              <span className={styles.statLabel}>Internships<br/>Done</span>
+            </div>
+          </motion.div>
         </div>
 
+        {/* Right: image */}
+        <motion.div
+          className={styles.rightCol}
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className={styles.imgFrame}>
+            <img
+              src={getImageUrl("about/image.jpeg")}
+              alt="Andry Raveloarison"
+              className={styles.aboutImg}
+            />
+            <div className={styles.imgCaption}>
+              <span>WEB DEVELOPER · MADAGASCAR</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

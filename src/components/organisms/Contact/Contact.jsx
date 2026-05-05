@@ -1,55 +1,66 @@
 import React from "react";
 import styles from "./Contact.module.css";
-import { getImageUrl } from "../../../utils";
 import contacts from "../../../data/contacts.json";
-import { useRef } from "react";
-import Word from "../../atoms/Word/Word.jsx";
-import { useScroll } from "framer-motion";
-
+import { getImageUrl } from "../../../utils";
+import { motion } from "framer-motion";
 
 export const Contact = () => {
-
-  const title = "CONTACT ME "
-  const titleRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: titleRef,
-    offset: ['start end', 'start 0.25']
-  })
-
-  const words = title.split(" ")
-
-
   return (
-    <footer id="contact" className={styles.container}>
-      <div className={styles.text}>
-        <h2 className={styles.title} ref={titleRef}>
-          {
-            words.map((word, i) => {
-              const start = i / words.length
-              return <Word key={i} range={[start, 1]} progress={scrollYProgress}>{word}</Word>
-            })
-          }
-        </h2>
-        <p className={styles.contactText}>Feel free to contact me by email or through my social networks.</p>
+    <footer className={styles.container} id="contact">
+      <div className={styles.chapterLabel}>
+        <span className={styles.chapterLine} />
+        <span className={styles.chapterText}>CHAPTER 06 · GET IN TOUCH</span>
       </div>
-      <ul className={styles.links}>
 
-        {
-          contacts.map((contact, id) => {
-            return (
-              <li key={id} className={styles.link}>
-                <img src={getImageUrl(contact.imageSrc)} alt="Email icon" className={styles.image} />
-                <a href={contact.source} target="_blank">{contact.name}</a>
-              </li>
-            )
-          })
-        }
+      <div className={styles.mainContent}>
+        <motion.h2
+          className={styles.bigCta}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          Let's work<br /><em>together.</em>
+        </motion.h2>
 
-      </ul>
+        <motion.div
+          className={styles.rightBlock}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <p className={styles.contactText}>
+            Feel free to reach out via email or connect on social media.
+            I'm always open to discussing new projects and opportunities.
+          </p>
 
-      <div className={styles.footer}>
-        <p>Designed and build by Andry </p>
-        <p>© Copyright {new Date().getFullYear()} - Andry RAVELOARISON</p>
+          <div className={styles.contactLinks}>
+            {contacts.map((c, i) => (
+              <a
+                key={i}
+                href={c.source}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contactLink}
+              >
+                <img src={getImageUrl(c.imageSrc)} alt={c.name} />
+                <span>{c.name}</span>
+                <span className={styles.arrow}>↗</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Footer bottom bar */}
+      <div className={styles.footerBar}>
+        <span className={styles.footerLeft}>
+          © {new Date().getFullYear()} — ANDRY RAVELOARISON
+        </span>
+        <span className={styles.footerRight}>
+          DESIGNED &amp; BUILT BY ANDRY
+        </span>
       </div>
     </footer>
   );

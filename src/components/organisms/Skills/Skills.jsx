@@ -2,127 +2,55 @@ import React from "react";
 import styles from "./Skills.module.css";
 import skills from "../../../data/skills.json";
 import { getImageUrl } from "../../../utils";
-import { useRef } from "react";
-import Word from "../../atoms/Word/Word.jsx";
-import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 
+const CATEGORIES = ["front-end", "back-end", "other"];
+const CATEGORY_LABELS = {
+  "front-end": "Front-end",
+  "back-end": "Back-end",
+  "other": "Tools & Other",
+};
+
 export const Skills = () => {
-
-  const constraintsRef = useRef(null);
-
-  const title = "MY SKILLS "
-  const titleRef = useRef(null)
-  const {scrollYProgress} = useScroll({
-    target: titleRef,
-    offset:['start end','start 0.25']
-  })
-
-  const words = title.split(" ")
-
   return (
     <section className={styles.container} id="skills">
-      <h2 className={styles.title} ref={titleRef}> 
-        {
-          words.map((word,i)=>{
-            const start = i / words.length
-            return <Word key={i} range={[start, 1]} progress ={scrollYProgress}>{word}</Word>
-          })
-        }
-      </h2>      
+      <div className={styles.chapterLabel}>
+        <span className={styles.chapterLine} />
+        <span className={styles.chapterText}>CHAPTER 05 · SKILLS</span>
+      </div>
 
-      <div className={styles.content}>
-        <motion.div className={styles.containerMotion} ref={constraintsRef}> 
-          <div className={styles.skills}>
+      <div className={styles.header}>
+        <h2 className={styles.sectionTitle}>Skills</h2>
+      </div>
 
-            <motion.div 
-              initial={{ x: "-100%" , opacity: 0}} // Ajustez ici pour représenter -100% de la largeur du viewport
-              whileInView={{
-                x: "-10%", opacity: 1
-              }}
-              viewport={{
-                margin: "-20%"
-              }}
-              className={styles.itemMotion} 
-              drag 
-              dragConstraints={constraintsRef}
-            >
-
-                <div  className={styles.skill}>
-                  <h1 className={styles.skillTitle}>Front-end</h1>
-                    {skills.map((skill, id) => {
-                      if(skill.category == "front-end"){
-                        return(
-                          <div key={id} className={styles.skillInfo}>
-                            <div className={styles.skillImageContainer}>
-                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                            </div>
-                            <p>{skill.title}</p>
-                          </div>
-                        );
-                      } 
-                    })}
-                </div>
-              </motion.div>
-
-              <motion.div 
-                initial={{ x: "100%", opacity: 0 }} // Ajustez ici pour représenter -100% de la largeur du viewport
-                whileInView={{
-                  x: "10%", opacity:1
-                }}
-                viewport={{
-                  margin: "-20%"
-                }}
-                className={styles.itemMotionBack} 
-                drag dragConstraints={constraintsRef}
-              > 
-                <div  className={styles.skill}>
-                  <h1 className={styles.skillTitle}>Back-end</h1>
-                  {skills.map((skill, id) => {
-                      if(skill.category == "back-end"){
-                        return(
-                          <div className={styles.skillInfo}>
-                            <div className={styles.skillImageContainer}>
-                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                            </div>
-                            <p>{skill.title}</p>
-                          </div>
-                        );
-                      } 
-                    })}
-                </div>
-              </motion.div>
-
-              <motion.div 
-                initial={{ x: "-100%" , opacity: 0}} // Ajustez ici pour représenter -100% de la largeur du viewport
-                whileInView={{
-                  x: "-10%", opacity: 1
-                }}
-                viewport={{
-                  margin: "-20%"
-                }}
-                
-                className={styles.itemMotion} 
-                drag dragConstraints={constraintsRef}
-              > 
-                <div  className={styles.skill}>
-                  <h1 className={styles.skillTitle}>Other</h1>
-                  {skills.map((skill, id) => {
-                      if(skill.category == "other"){
-                        return(
-                          <div className={styles.skillInfo}>
-                            <div className={styles.skillImageContainer}>
-                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                            </div>
-                            <p>{skill.title}</p>
-                          </div>
-                        );
-                      } 
-                    })}
-                </div>
-              </motion.div>
-          </div>
-        </motion.div>
+      <div className={styles.categoriesGrid}>
+        {CATEGORIES.map((cat, ci) => (
+          <motion.div
+            key={cat}
+            className={styles.category}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: ci * 0.1 }}
+          >
+            <div className={styles.catHeader}>
+              <span className={styles.catNum}>0{ci + 1}</span>
+              <h3 className={styles.catTitle}>{CATEGORY_LABELS[cat]}</h3>
+            </div>
+            <div className={styles.skillGrid}>
+              {skills
+                .filter(s => s.category === cat)
+                .map((skill, si) => (
+                  <div key={si} className={styles.skillItem}>
+                    <div className={styles.skillIcon}>
+                      <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                    </div>
+                    <span className={styles.skillName}>{skill.title}</span>
+                  </div>
+                ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

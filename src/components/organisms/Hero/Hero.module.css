@@ -1,137 +1,247 @@
-@import "../../../vars.css";
-
 .container {
   position: relative;
+  min-height: 100vh;
+  background: var(--cream);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding: 80px 20px;
-  background: radial-gradient(circle at center, #dbdbdbda 0%, #0462a1d5 100%);
+  justify-content: space-between;
+  padding-top: 100px;
   overflow: hidden;
 }
 
-.topContent {
-  text-align: center;
-  z-index: 10;
-  max-width: 800px;
-  margin-bottom: 40px;
+/* ── CHAPTER LABEL ───────────────────── */
+.chapterLabel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 var(--content-pad);
+  margin-bottom: 32px;
 }
 
-.badge {
-  display: inline-block;
-  padding: 4px 12px;
-  background: #f3f0ff7c;
-  border-radius: 20px;
-  margin-bottom: 8px;
+.chapterLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--black);
+  flex-shrink: 0;
 }
 
-.badge span {
-  font-size: 0.8rem;
-  color: #4319c3;
-  font-weight: 500;
+.chapterText {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey);
 }
 
-.title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-  line-height: 1.1;
+/* ── MAIN GRID ───────────────────────── */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  padding: 0 var(--content-pad);
+  gap: 40px;
+  align-items: center;
+  min-height: 0;
 }
 
-.highlight {
-  color: #333;
+/* ── LEFT COLUMN ─────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.nameWrap {
+  overflow: hidden;
+}
+
+.bigName {
+  font-family: var(--font-serif);
+  font-size: clamp(80px, 13vw, 180px);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.descBlock {
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .description {
-  font-size: 1.1rem;
-  color: #111111;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--black);
+  font-weight: 300;
 }
 
-.imageContainer {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -20px;
-}
-
-.backgroundText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.2);
-  font-size: 25vw;
-  font-weight: 900;
-  color: rgb(0, 0, 0);
-  letter-spacing: -0.05em;
-  pointer-events: none;
-  z-index: 1;
-  white-space: nowrap;
-  opacity: 0;
-}
-
-.heroImg {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.1));
-  opacity: 0;
-}
-
-.linksContainer {
-  margin-top: 40px;
-  z-index: 10;
+.description em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-weight: 700;
 }
 
 .links {
   display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.link {
-  opacity: 0;
-}
-
-.link a {
+.socialLink {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 44px;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.socialLink img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1) grayscale(1) opacity(1);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  /*background-color: black;*/
+}
+
+.socialLink:hover {
+  color: var(--black);
+}
+
+.socialLink:hover img {
+  opacity: 1;
+  filter: none;
+}
+
+/* ── RIGHT COLUMN ────────────────────── */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+}
+
+.yearLabel {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-family: var(--font-serif);
+  font-size: clamp(60px, 10vw, 130px);
+  font-weight: 900;
+  color: var(--black);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.yearLabel span {
+  font-size: 0.6em;
+}
+
+.imgWrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0.1);
+}
+
+/* ── TICKER ──────────────────────────── */
+.ticker {
+  background: var(--black);
+  overflow: hidden;
   height: 44px;
-  background: var(--bg-grey);
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  margin-top: 40px;
 }
 
-.link a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+.tickerTrack {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
 }
 
-.link img {
-  width: 20px;
-  height: 20px;
+.tickerItem {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f0ede5;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
+.tickerDot {
+  color: var(--red);
+  font-size: 0.5rem;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
   }
 
-  .backgroundText {
-    font-size: 35vw;
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media (max-width: 900px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rightCol {
+    min-height: 280px;
+    align-items: center;
+  }
+
+  .yearLabel {
+    display: none;
+  }
+
+  .imgWrap {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .bigName {
+    font-size: clamp(60px, 18vw, 100px);
   }
 }
