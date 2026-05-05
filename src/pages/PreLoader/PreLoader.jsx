@@ -13,6 +13,9 @@ const PreLoader = ({ onComplete }) => {
   const topBarRef = useRef(null);
   const bottomBarRef = useRef(null);
   const dividerRef = useRef(null);
+  const currentYear = new Date().getFullYear();
+  const nameRowRef = useRef(null);
+  const nameRowRef2 = useRef(null);
 
   useEffect(() => {
     // Initial states
@@ -22,6 +25,8 @@ const PreLoader = ({ onComplete }) => {
     gsap.set(bottomBarRef.current, { opacity: 0 });
     gsap.set(dividerRef.current, { scaleX: 0, transformOrigin: "left center" });
     gsap.set(progressFillRef.current, { scaleX: 0, transformOrigin: "left center" });
+    gsap.set(nameRowRef.current, { opacity: 1 });
+    gsap.set(nameRowRef2.current, { opacity: 1 });
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -82,13 +87,13 @@ const PreLoader = ({ onComplete }) => {
     <div className={styles.preloader}>
       {/* Top bar */}
       <div className={styles.topBar} ref={topBarRef}>
-        <span className={styles.label}>— PORTFOLIO · 2024</span>
+        <span className={styles.label}>— PORTFOLIO · {currentYear}</span>
         <span className={styles.label}>ANDRY RAVELOARISON</span>
       </div>
 
       {/* Center content */}
       <div className={styles.center}>
-        <div className={styles.nameRow}>
+        <div className={styles.nameRow} ref={nameRowRef}>
           {NAME1.map((letter, i) => (
             <span
               key={i}
@@ -102,7 +107,7 @@ const PreLoader = ({ onComplete }) => {
 
         <div className={styles.divider} ref={dividerRef} />
 
-        <div className={styles.nameRow2}>
+        <div className={styles.nameRow2} ref={nameRowRef2}>
           {NAME2.map((letter, i) => (
             <span
               key={i}
