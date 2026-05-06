@@ -23,7 +23,7 @@ const PreLoader = ({ onComplete }) => {
     gsap.set(letters2Ref.current, { y: 40, opacity: 0 });
     gsap.set(topBarRef.current, { opacity: 0 });
     gsap.set(bottomBarRef.current, { opacity: 0 });
-    gsap.set(dividerRef.current, { scaleX: 0, transformOrigin: "left center" });
+    gsap.set(dividerRef.current, { opacity: 1, scaleX: 0, transformOrigin: "left center" });
     gsap.set(progressFillRef.current, { scaleX: 0, transformOrigin: "left center" });
     gsap.set(nameRowRef.current, { opacity: 1 });
     gsap.set(nameRowRef2.current, { opacity: 1 });

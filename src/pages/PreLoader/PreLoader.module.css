@@ -68,6 +68,7 @@
   height: 1px;
   background: rgba(240, 237, 229, 0.25);
   margin: 12px 0 14px;
+  opacity: 0;
 }
 
 .nameRow2 {
